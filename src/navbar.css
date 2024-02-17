@@ -1,0 +1,27 @@
+.btn:hover{
+    background-color: red;
+}
+
+.act{
+    text-decoration: none;
+    border-bottom: 1px solid red;
+    color: white;
+}
+
+.nav-link, .act{
+    margin: 12px;
+    font-size: 15px;
+    font-family: Calibri;
+}
+
+.nav-link{
+    color: #B2B2B2;
+}
+
+.nav-link:hover{
+    color: white;
+}
+
+.container-fluid{
+    z-index: 5;
+}
