@@ -59,6 +59,10 @@ const func = () => {
     <div className='s-cont'>
     <button className='newButt' style={s1}><p style={{fontSize: "30px", position: "relative", top: "-10px"}} onClick={changed}>{sign2}</p></button>
     <button className='newBut1' style={s2}><p style={{fontSize: "30px", position: "relative", top: "-10px"}} onClick={changed}>{sign1}</p></button>
+    
+    </div>
+    <div style={{color: "yellow", zIndex: 11}}>
+      goodboy
     </div>
     </div>
     </>

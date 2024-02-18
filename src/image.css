@@ -35,8 +35,8 @@
 }
 
 .main{
-    background-image: (to bottom, rgba(0, 12, 100, 0.5), rgba(0, 0, 0, 0));
-    height: 100px;
+    /* background-image: (to bottom, rgba(0, 12, 100, 0.5), rgba(0, 0, 0, 0)); */
+    height: 20px;
 }
 
 .newButt{
@@ -143,7 +143,7 @@ p{
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        position: fixed;
+        position: absolute;
         animation: zoom-in-zoom-out 20s ease infinite;
         z-index: 1;
 }

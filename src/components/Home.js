@@ -12,7 +12,7 @@ const Home = () => {
     <div>
       <ImageCollection/>
     </div>
-    <div className='mnav'>
+    <div className='mnav' style={{zIndex: 10, backgroundColor: "#000B4B"}}>
       <Moviesnav/>
     </div>
     <div className='stat'>
