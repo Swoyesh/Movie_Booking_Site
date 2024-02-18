@@ -1,9 +1,13 @@
 import React from 'react'
+import Cmovie from './Cmovie'
 
 const Moviecollec = () => {
   return (
     <div className='container'>
-        <p style={{color: "red"}}>hello</p>
+        <Cmovie/>
+        <Cmovie/>
+        <Cmovie/>
+        <Cmovie/>
     </div>
   )
 }
