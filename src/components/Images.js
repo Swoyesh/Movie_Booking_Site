@@ -46,18 +46,18 @@ const Images = () => {
     setTimeout(() => {
       setAnimation("not")
       setAnimations("not")
-    }, 1000);
+    }, 680);
 
   }
   return (
     <>
       <div className='main' onMouseMove={clicked1} onMouseOut={clicked2}>
         {/* <div className='m-cont'> */}
-        {/* <div className='new'> */}
+        <div className='new'>
           <div className={animation}>
             <div className={animations}></div>
           </div>
-        {/* </div> */}
+        </div>
         <div className='s-cont'>
           <button className='newButt' style={s1}><p style={{ fontSize: "30px", position: "relative", top: "-10px" }} onClick={changed}>{sign2}</p></button>
           <button className='newBut1' style={s2}><p style={{ fontSize: "30px", position: "relative", top: "-10px" }} onClick={changed}>{sign1}</p></button>

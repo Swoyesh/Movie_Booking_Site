@@ -12,7 +12,7 @@
     align-items: center;
     flex-wrap: wrap;
     position: absolute;
-    animation: zoom-in-zoom-out 20s ease infinite, change 0.7s ease;
+    animation: zoom-in-zoom-out 20s ease infinite, change 1.5s ease;
     z-index: 1;
 }
 
@@ -30,7 +30,7 @@
     align-items: center;
     flex-wrap: wrap;
     position: absolute;
-    animation: zoom-in-zoom-out 20s ease infinite, changes 0.7s ease;
+    animation: zoom-in-zoom-out 20s ease infinite, changes 5s ease;
     z-index: 1;
 }
 
@@ -104,18 +104,18 @@ p{
 
  @keyframes change{
     0%{
-        left: 0px;
+        translate: 0px;
     }
     100%{
-        left: 1500px;
+        translate: 1500px;
     }
 } 
  @keyframes changes{
     0%{
-        left: -1500px;
+        translate: -1350px;
     }
     100%{
-        left: 0px;
+        translate: 0px;
     }
 } 
 
@@ -149,7 +149,6 @@ p{
         animation: zoom-in-zoom-out 20s ease infinite;
         background-repeat: no-repeat;
         z-index: 1;
-        overflow-y: hidden;
 }
 /* Laterfix */
 /* .new{
@@ -163,3 +162,22 @@ p{
     z-index: 4;
     overflow: hidden;
 } */
+
+.new{
+    /* background-image: */
+    /* linear-gradient(to bottom, rgba(0, 12, 100, 0.5), rgba(0, 12, 100, 0.5)), */
+    /* url('./hall2.jpg'); */
+    width: 100%;
+    height: 525px;
+    background-size: cover;
+    position: relative;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    animation: zoom-in-zoom-out 20s ease infinite, change 1.5s ease;
+    z-index: 1;
+    overflow: hidden;
+}
