@@ -1,0 +1,18 @@
+.btn-primary{
+    background-color: transparent;
+    border: 1.3px solid #008f00;
+    color: #008f00;
+    font-size: 14px;
+    padding: 5px 2px 5px 2px;
+    float: left;
+    width: 30%;
+    margin: 3.5px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover{
+    color: white;
+    background-color: #009a00;
+    border: none;
+    border-color: #009a00;
+}
