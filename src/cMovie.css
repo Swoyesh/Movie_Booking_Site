@@ -15,4 +15,7 @@
     background-color: #009a00;
     border: none;
     border-color: #009a00;
+    margin: 3.5px;
+    float: left;
+    width: 30%;
 }

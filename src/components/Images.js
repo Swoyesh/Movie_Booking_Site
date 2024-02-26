@@ -6,19 +6,19 @@ const Images = () => {
   const [display2, setDisplay2] = useState(100)
   const [animation, setAnimation] = useState("not")
   const [animations, setAnimations] = useState("not")
-  let delay = 6000;
-  const func = () => {
-    if (animation === "not") {
-      setAnimation("cont")
-      setAnimations("conts")
-    }
-    setTimeout(() => {
-      setAnimation("not")
-      setAnimations("not")
-    }, 1000);
-    delay += 6000;
-    setTimeout(func, delay);
-  }
+  // let delay = 6000;
+  // const func = () => {
+  //   if (animation === "not") {
+  //     setAnimation("cont")
+  //     setAnimations("conts")
+  //   }
+  //   setTimeout(() => {
+  //     setAnimation("not")
+  //     setAnimations("not")
+  //   }, 1000);
+  //   delay += 6000;
+  //   setTimeout(func, delay);
+  // }
   // setTimeout(func, 5000);
 
   let s1 = {
