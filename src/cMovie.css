@@ -4,7 +4,6 @@
     color: #008f00;
     font-size: 14px;
     padding: 5px 2px 5px 2px;
-    float: left;
     width: 30%;
     margin: 3.5px;
     border-radius: 5px;
@@ -15,7 +14,41 @@
     background-color: #009a00;
     border: none;
     border-color: #009a00;
+    padding: 5px 2px 5px 2px;
     margin: 3.5px;
-    float: left;
     width: 30%;
+}
+
+.card{
+    overflow: hidden;
+}
+
+.card-body{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 190px;
+    overflow: hidden;
+}
+
+.buttt{
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    height: 30px;
+}
+
+.img-div:hover{
+    cursor: pointer;
+    animation: zizo ease infinite 1s;
+}
+
+@keyframes zizo{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.2);
+    }
 }

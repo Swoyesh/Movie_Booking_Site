@@ -177,7 +177,6 @@ p{
     align-items: center;
     flex-wrap: wrap;
     position: absolute;
-    animation: zoom-in-zoom-out 20s ease infinite, change 1.5s ease;
     z-index: 1;
     overflow: hidden;
 }
