@@ -10,7 +10,7 @@ const Moviesnav = () => {
   let newArr = [];
   for (let index = 0; index < 8; index++) {
     if(index === 0){
-      if(d.getDate() + 2>ld.getDate){
+      if(d.getDate() + 2>ld.getDate()){
         arr[index] = 1;
       }else{
         arr[index] = d.getDate() + 2
@@ -47,16 +47,16 @@ const Moviesnav = () => {
     <div className='container'>
         <div className='text' style={style}><strong>Now Showing<span style={{color: "red"}}> .</span></strong></div>
         <div className='dates'>
-          <a className={activeTab==="Today"?'actor':'dice'} onClick={()=>clicked("Today")}>Today</a>
-          <a className={activeTab==="Tomm"?'actor':'dice'} onClick={()=>clicked("Tomm")}>Tomm</a>
-          <a className={activeTab==="1"?'actor':'dice'} onClick={()=>clicked("1")}>{newArr[0].concat(" ", month[cm(0)])}</a>
-          <a className={activeTab==="2"?'actor':'dice'} onClick={()=>clicked("2")}>{newArr[1].concat(" ", month[cm(1)])}</a>
-          <a className={activeTab==="3"?'actor':'dice'} onClick={()=>clicked("3")}>{newArr[2].concat(" ", month[cm(2)])}</a>
-          <a className={activeTab==="4"?'actor':'dice'} onClick={()=>clicked("4")}>{newArr[3].concat(" ", month[cm(3)])}</a>
-          <a className={activeTab==="5"?'actor':'dice'} onClick={()=>clicked("5")}>{newArr[4].concat(" ", month[cm(4)])}</a>
-          <a className={activeTab==="6"?'actor':'dice'} onClick={()=>clicked("6")}>{newArr[5].concat(" ", month[cm(5)])}</a>
-          <a className={activeTab==="7"?'actor':'dice'} onClick={()=>clicked("7")}>{newArr[6].concat(" ", month[cm(6)])}</a>
-          <a className={activeTab==="8"?'actor':'dice'} onClick={()=>clicked("8")}>{newArr[7].concat(" ", month[cm(7)])}</a>
+          <Link className={activeTab==="Today"?'actor':'dice'} onClick={()=>clicked("Today")}>Today</Link>
+          <Link className={activeTab==="Tomm"?'actor':'dice'} onClick={()=>clicked("Tomm")}>Tomm</Link>
+          <Link className={activeTab==="1"?'actor':'dice'} onClick={()=>clicked("1")}>{newArr[0].concat(" ", month[cm(0)])}</Link>
+          <Link className={activeTab==="2"?'actor':'dice'} onClick={()=>clicked("2")}>{newArr[1].concat(" ", month[cm(1)])}</Link>
+          <Link className={activeTab==="3"?'actor':'dice'} onClick={()=>clicked("3")}>{newArr[2].concat(" ", month[cm(2)])}</Link>
+          <Link className={activeTab==="4"?'actor':'dice'} onClick={()=>clicked("4")}>{newArr[3].concat(" ", month[cm(3)])}</Link>
+          <Link className={activeTab==="5"?'actor':'dice'} onClick={()=>clicked("5")}>{newArr[4].concat(" ", month[cm(4)])}</Link>
+          <Link className={activeTab==="6"?'actor':'dice'} onClick={()=>clicked("6")}>{newArr[5].concat(" ", month[cm(5)])}</Link>
+          <Link className={activeTab==="7"?'actor':'dice'} onClick={()=>clicked("7")}>{newArr[6].concat(" ", month[cm(6)])}</Link>
+          <Link className={activeTab==="8"?'actor':'dice'} onClick={()=>clicked("8")}>{newArr[7].concat(" ", month[cm(7)])}</Link>
         </div>
     </div>
   )

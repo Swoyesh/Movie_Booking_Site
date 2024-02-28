@@ -18,7 +18,7 @@ const Navbar = () => {
         <>
             <nav className="navbar navbar-expand-lg" style={{ backgroundColor: "transparent", cursor: "pointer" }}>
                 <div className="container-fluid">
-                    <Link to ="/"><img alt='logo' src={logo} height={"50px"} width={"140px"} style={{ left: "150px", position: "relative", cursor: "pointer" }} /></Link>
+                    <Link to ="/"><img alt='logo' src={logo} height={"50px"} width={"130px"} style={{ left: "60px", position: "relative", cursor: "pointer" }} /></Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

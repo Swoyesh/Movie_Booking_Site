@@ -27,7 +27,11 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     height: 190px;
-    overflow: hidden;
+    z-index: 2;
+}
+
+.type{
+    z-index: 2;
 }
 
 .buttt{
@@ -39,16 +43,22 @@
     height: 30px;
 }
 
-.img-div:hover{
-    cursor: pointer;
-    animation: zizo ease infinite 1s;
+.img-div{
+    scale: 1;
+    transition: scale 1s;
+    z-index: 1;
 }
 
-@keyframes zizo{
-    0%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(1.2);
-    }
+.img-div:hover{
+    cursor: pointer;
+    scale: 1.1;
+    z-index: 1;
+}
+
+.color{
+    position: relative;
+    top: -100px;
+    height: 100px;
+    z-index: 3;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 47, 94, 1));
 }
