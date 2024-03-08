@@ -41,6 +41,9 @@
     font-size: 15px;
     font-weight: bold;
     height: 30px;
+    position: relative;
+    top: -50px;
+    
 }
 
 .img-div{
@@ -61,21 +64,22 @@
 
 .b1{
     border: none;
-    padding: 10px 28px 10px 28px;
+    padding: 8px 25px 8px 17px;
     border-radius: 5px;
     color: red;
     font-size: 12px;
     position: relative;
-    left: 10px;
+    left: 20px;
     top: 250px;
+    display: block;
 }
 .b2{
     border: none;
-    padding: 10px 28px 10px 28px;
+    padding: 13px 25px 13px 17px;
     border-radius: 5px;
     color: red;
     font-size: 12px;
     position: relative;
-    left: -103px;
-    top: 300px;
+    left: -75px;
+    top: 260px;
 }
