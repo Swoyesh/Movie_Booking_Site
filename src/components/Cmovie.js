@@ -8,7 +8,10 @@ const Cmovie = (props) => {
         <>
             <div className="card" style={{width: "18rem", margin: "15px", border: "none"}}>
             <div className='type' style={{position: "relative", top: "10px", backgroundColor: "red", height: "0%", textAlign: "right", right:"10px"}}>
+            <button className='b1'><i class="fa-regular fa-ticket"></i>Buy Tickets</button>
+                    <button className='b2'>Play Trailer</button>
                     <button className='buttt'>{type}</button>
+                    
                 </div>
                 <div className='img-div'>
                 <img src={props.img} className="card-img-top" alt="..." height={"380px"} />
