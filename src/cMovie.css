@@ -58,6 +58,10 @@
     z-index: 1;
 }
 
+.type:hover{
+    cursor: pointer;
+}
+
 .color{
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 47, 94, 1));
 }
@@ -72,7 +76,11 @@
     left: 20px;
     top: 250px;
     display: block;
+    translate: -140;
+    transition: translate 0.3s;
 }
+
+
 .b2{
     border: none;
     padding: 13px 25px 13px 17px;
@@ -80,6 +88,19 @@
     color: red;
     font-size: 12px;
     position: relative;
-    left: -75px;
+    left: -73px;
     top: 260px;
+    translate: -140;
+    transition: translate 0.3s;
 }
+
+.b1:hover, .b2:hover{
+    translate: 0px;
+    background-color: red;
+    color: white;
+}
+
+/* .mid{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 12, 100, 0.5));
+    height: 50px;
+} */
