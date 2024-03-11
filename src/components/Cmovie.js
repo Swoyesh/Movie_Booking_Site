@@ -37,7 +37,9 @@ const Cmovie = (props) => {
                 <img src={props.img} className="card-img-top" alt="..." height={"380px"} />
                 
                 </div>
+                <div className='conti'>
                 <div className='mid'>hello</div>
+                </div>
                 </div>
                 <div className="card-body" style={{backgroundColor: "#002f5e"}}>
                     <h5 className="card-title" style={{color: "white", fontSize: "21px"}}><strong>{props.title}</strong></h5>
