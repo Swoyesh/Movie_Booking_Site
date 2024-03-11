@@ -26,15 +26,18 @@ const Cmovie = (props) => {
     return (
         <>
             <div className="card" style={{width: "18rem", margin: "15px", border: "none"}}>
-            <div style={s2} onMouseMove={clicked1} onMouseOut={clicked2} className='type' style={{position: "relative", top: "10px", backgroundColor: "red", height: "0%", textAlign: "right", right:"10px"}}>
+            <div onMouseMove={clicked1} onMouseOut={clicked2} className='type' style = {{position: "relative", top: "10px", backgroundColor: "red", height: "0%", textAlign: "right", right:"10px"}}>
             <button className='b1' style={s1}><i class="fa-regular fa-ticket" style={{margin: "8px"}}></i>Buy Tickets</button>
                     <button className='b2' style={s1}><i class="fa-thin fa-play" style={{margin: "8px"}}></i>Play Trailer</button>
                     <button className='buttt'>{type}</button>
                     
                 </div>
+                <div className='main' style={{height: "380px"}}>
                 <div className='img-div' style={s2} onMouseMove={clicked1} onMouseOut={clicked2}>
                 <img src={props.img} className="card-img-top" alt="..." height={"380px"} />
-                <div className='mid'></div>
+                
+                </div>
+                <div className='mid'>hello</div>
                 </div>
                 <div className="card-body" style={{backgroundColor: "#002f5e"}}>
                     <h5 className="card-title" style={{color: "white", fontSize: "21px"}}><strong>{props.title}</strong></h5>
