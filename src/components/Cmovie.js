@@ -1,3 +1,5 @@
+//individual movies
+
 import React, { useState } from 'react'
 import "../cMovie.css"
 
@@ -37,11 +39,9 @@ const Cmovie = (props) => {
                 <img src={props.img} className="card-img-top" alt="..." height={"380px"} />
                 
                 </div>
-                <div className='conti'>
-                <div className='mid'>hello</div>
                 </div>
-                </div>
-                <div className="card-body" style={{backgroundColor: "#002f5e"}}>
+                <div className="card-body" style={{backgroundColor: "#182356"}}>
+                    
                     <h5 className="card-title" style={{color: "white", fontSize: "21px"}}><strong>{props.title}</strong></h5>
                     <p className="card-text" style={{color: "gray", fontSize: "12px", textAlign: "left"}}>{props.duration}</p>
                     <p className="card-text" style={{color: "gray", marginTop: "-12px", fontSize: "12px", textAlign: "left"}}>{props.genre}</p>
