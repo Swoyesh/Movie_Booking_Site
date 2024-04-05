@@ -1,0 +1,21 @@
+.title{
+    display: flex;
+    justify-content: center;
+}
+
+.act-linker{
+    color: #db322b;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 27px;
+    font-weight: bold;
+
+}
+
+.linker{
+    color: #adb5bd;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 27px;
+    font-weight: bold;
+}

@@ -4,6 +4,7 @@ import Moviesnav from './Moviesnav'
 import Status from './Status'
 import "../universal.css"
 import Moviecollec from './Moviecollec'
+import Upcoming from './Upcoming'
 
 
 const Home = () => {
@@ -20,6 +21,9 @@ const Home = () => {
     </div>
     <div className='mcollec'>
       <Moviecollec/>
+    </div>
+    <div className='up'>
+      <Upcoming/>
     </div>
     </>
   )
