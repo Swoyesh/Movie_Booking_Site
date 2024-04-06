@@ -10,14 +10,14 @@ import mnik from '../mnik.jpg'
 const Upcoming = () => {
     const first = {
         name: "Aladdin",
-        time: "2 hrs", 
+        time: "2 Hours", 
         release: "10th April",
         photos: ala
     }
     
     const second = {
         name: "My name is Khan",
-        time: "2 hrs 26 mins", 
+        time: "2 Hours 26 Mins", 
         release: "5th March", 
         photos: mnik
     }
@@ -42,7 +42,7 @@ let counter = -1;
         <Link href='#' className={active === "NR"? "act-linker" : "linker"} onClick={()=>clicked("NR")}>Next Release</Link>
         <Link href='#' className={active === "CS"? "act-linker" : "linker"}  onClick={()=>clicked("CS")}>Coming Soon</Link>
     </div>
-    <div className= "container"style={{position:"relative", top: "75px"}}>
+    <div className= "containers"style={{position:"relative", top: "75px"}}>
     {nactive.map((element)=>{
           {counter++}
           return <SCmovie title = {element.name} duration = {element.time} img = {element.photos} type = {element.release}/>

@@ -1,0 +1,105 @@
+.btn-primary{
+    background-color: transparent;
+    border: 1.3px solid #008f00;
+    color: #008f00;
+    font-size: 14px;
+    padding: 5px 1.5px 5px 1.5px;
+    width: 30%;
+    margin: 3.5px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover{
+    color: white;
+    background-color: #009a00;
+    border: none;
+    border-color: #009a00;
+    padding: 5px 1.5px 5px 1.5px;
+    margin: 3.5px;
+    width: 30%;
+}
+
+.main.card{
+    position: relative;
+    top: 1000px;
+    overflow: hidden;
+    width: 30px;
+}
+
+.ancestor{
+    height: 0px;
+}
+
+.ancestor.card-body{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 1px;
+    z-index: 2;
+}
+
+.type{
+    z-index: 2;
+}
+
+.buttt{
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    height: 30px;
+    position: relative;
+    top: -50px;
+    
+}
+
+.img-div{
+    scale: 1;
+    transition: scale 1s;
+    z-index: 1;
+}
+
+.img-div:hover{
+    cursor: pointer;
+    scale: 1.1;
+    z-index: 1;
+}
+
+.type:hover{
+    cursor: pointer;
+}
+
+.b1{
+    border: none;
+    padding: 8px 25px 8px 17px;
+    border-radius: 5px;
+    color: red;
+    font-size: 12px;
+    position: relative;
+    left: 20px;
+    top: 250px;
+    display: block;
+    translate: -140;
+    transition: translate 0.3s;
+}
+
+
+.b2{
+    border: none;
+    padding: 13px 25px 13px 17px;
+    border-radius: 5px;
+    color: red;
+    font-size: 12px;
+    position: relative;
+    left: -67px;
+    top: 260px;
+    translate: -140;
+    transition: translate 0.3s;
+}
+
+.b1:hover, .b2:hover{
+    translate: 0px;
+    background-color: red;
+    color: white;
+}
+

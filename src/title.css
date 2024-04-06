@@ -19,3 +19,8 @@
     font-size: 27px;
     font-weight: bold;
 }
+
+.containers{
+    display: flex;
+    justify-content: center;
+}
