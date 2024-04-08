@@ -19,9 +19,8 @@
     width: 30%;
 }
 
-.main.card{
+.card{
     position: relative;
-    top: 1000px;
     overflow: hidden;
     width: 30px;
 }
@@ -37,20 +36,21 @@
     z-index: 2;
 }
 
-.type{
+.timer{
     z-index: 2;
+    border-radius: 1px;
 }
 
-.buttt{
+.buttter{
     border: none;
-    background-color: white;
-    border-radius: 15px;
-    font-size: 15px;
+    background-color: red;
+    border-radius: 5px;
+    font-size: 14px;
     font-weight: bold;
     height: 30px;
     position: relative;
     top: -50px;
-    
+    color: white;
 }
 
 .img-div{
@@ -65,39 +65,39 @@
     z-index: 1;
 }
 
-.type:hover{
+.timer:hover{
     cursor: pointer;
 }
 
-.b1{
+.bb1{
     border: none;
-    padding: 8px 25px 8px 17px;
+    padding: 8px 17px 8px 14px;
     border-radius: 5px;
     color: red;
     font-size: 12px;
     position: relative;
-    left: 20px;
-    top: 250px;
+    left: 15px;
+    top: 280px;
     display: block;
     translate: -140;
     transition: translate 0.3s;
 }
 
 
-.b2{
+.bb2{
     border: none;
     padding: 13px 25px 13px 17px;
     border-radius: 5px;
     color: red;
     font-size: 12px;
     position: relative;
-    left: -67px;
-    top: 260px;
+    left: 15px;
+    top: 270px;
     translate: -140;
     transition: translate 0.3s;
 }
 
-.b1:hover, .b2:hover{
+.bb1:hover, .bb2:hover{
     translate: 0px;
     background-color: red;
     color: white;

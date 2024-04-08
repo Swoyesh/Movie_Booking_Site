@@ -29,6 +29,7 @@
     border-bottom-right-radius: 5px;
     height: 140px;
     z-index: 2;
+    /* overflow: auto; */
 }
 
 .type{
