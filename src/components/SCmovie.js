@@ -23,6 +23,7 @@ const SCmovie = (props) => {
       }
   return (
     <>
+    {/* <div className='nancestor'> */}
     <div className="card" style={{width: "16.5rem", margin: "15px", border: "none"}}>
             <div onMouseMove={clicked1} onMouseOut={clicked2} className='timer' style = {{position: "relative",top: "-20px", backgroundColor: "red", height: "0%", textAlign: "left"}}>
                     <div><button className='bb2' style={s1}><i class="fa-thin fa-play" style={{margin: "8px"}}></i>Play Trailer</button></div>
@@ -36,6 +37,7 @@ const SCmovie = (props) => {
                 
                 </div>
                 </div>
+                {/* </div> */}
                 <div className='ancestor'>
                 <div className="card-body" style={{backgroundColor: "#182356"}}>
                     

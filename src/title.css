@@ -1,6 +1,8 @@
 .title{
     display: flex;
     justify-content: center;
+    opacity: 1;
+    position: relative;
 }
 
 .act-linker{
@@ -9,7 +11,7 @@
     padding: 15px;
     font-size: 27px;
     font-weight: bold;
-
+    z-index: 3;
 }
 
 .linker{
@@ -18,14 +20,28 @@
     padding: 15px;
     font-size: 27px;
     font-weight: bold;
+    z-index: 3;
 }
 
 .containers{
     display: flex;
     justify-content: center;
+    opacity: 1;
+    position: relative;
+    top: -500px;
 }
 
 .nice{
     background-image: url('./hall2.jpg');
     background-size: cover;
+    height: 600px;
+    position: fixed;
+    z-index: 2px;
+    opacity: 0.3;
+}
+
+.nicer{
+    position: relative;
+    top: -700px;
+    height: 0px;
 }

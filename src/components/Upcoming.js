@@ -44,7 +44,11 @@ const clicked = (token, ntoken)=>{
 let counter = -1;
   return (
     <>
-    <div className='nice' style={{position: "relative", margin: "0px", left: "0px"}}>
+    
+    <div className='nice' style={{position: "sticky", margin: "0px", left: "0px"}}></div>
+    <div className='first' style={{color: "red", position: "relative", top: "-600px"}}></div>
+    <div className='nicer' style={{position: "relative", margin: "0px", left: "0px"}}>
+        
     <div className='title'>
         <Link href='#' className={active === "NR"? "act-linker" : "linker"} onClick={()=>clicked("NR", NR)}>Next Release</Link>
         <Link href='#' className={active === "CS"? "act-linker" : "linker"}  onClick={()=>clicked("CS", CS)}>Coming Soon</Link>
@@ -56,6 +60,7 @@ let counter = -1;
         })}
     </div>
     </div>
+    <div className='last' style={{color: "red", position: "relative", bottom: "200px"}}></div>
     </>
   )
 }
