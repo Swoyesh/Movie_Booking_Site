@@ -5,6 +5,7 @@ import Status from './Status'
 import "../universal.css"
 import Moviecollec from './Moviecollec'
 import Upcoming from './Upcoming'
+import Footer from './Footer'
 
 
 const Home = () => {
@@ -24,6 +25,9 @@ const Home = () => {
     </div>
     <div className='up'>
       <Upcoming/>
+    </div>
+    <div className='bottom'>
+      <Footer/>
     </div>
     </>
   )

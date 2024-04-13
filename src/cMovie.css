@@ -1,15 +1,17 @@
-.btn-primary{
+.bit{
     background-color: transparent;
     border: 1.3px solid #008f00;
+    padding: 5px 1.5px 5px 1.5px;
     color: #008f00;
     font-size: 14px;
-    padding: 5px 1.5px 5px 1.5px;
-    width: 30%;
+    width: 10%;
+    text-decoration: none;
     margin: 3.5px;
     border-radius: 5px;
 }
 
-.btn-primary:hover{
+.bit:hover{
+    text-decoration: none;
     color: white;
     background-color: #009a00;
     border: none;
@@ -21,7 +23,7 @@
 
 .card{
     overflow: hidden;
-    width: 100px;
+    width: 140px;
 }
 
 .card-body{
@@ -29,7 +31,7 @@
     border-bottom-right-radius: 5px;
     height: 140px;
     z-index: 2;
-    /* overflow: auto; */
+    overflow:auto;
 }
 
 .type{
