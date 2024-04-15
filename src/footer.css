@@ -2,3 +2,78 @@
     background-color: #091138;
     height: 400px;
 }
+
+.lg{
+    position: relative;
+    top: 52px;
+    height: 52px;
+    width: 130px;
+}
+
+.fa-facebook{
+    position: relative;
+    top: 100px;
+    color: white;
+    font-size: 20px;
+    margin: 8px;
+}
+.fa-facebook:hover{
+    position: relative;
+    top: 100px;
+    color: red;
+    font-size: 20px;
+    margin: 8px;
+}
+
+.fa-instagram{
+    position: relative;
+    top: 98px;
+    color: white;
+    font-size: 22px;
+    margin: 8px;
+}
+.fa-instagram:hover{
+    position: relative;
+    top: 98px;
+    color: red;
+    font-size: 22px;
+    margin: 8px;
+}
+
+.fa-square-twitter{
+    position: relative;
+    top: 98px;
+    color: white;
+    font-size: 22px;
+    margin: 8px;
+}
+.fa-square-twitter:hover{
+    position: relative;
+    top: 98px;
+    color: red;
+    font-size: 22px;
+    margin: 8px;
+}
+
+.fa-whatsapp{
+    position: relative;
+    top: 98px;
+    color: white;
+    font-size: 22px;
+    margin: 8px;
+}
+.fa-whatsapp:hover{
+    position: relative;
+    top: 98px;
+    color: red;
+    font-size: 22px;
+    margin: 8px;
+}
+
+.now{
+    position: relative;
+    top: 52px;
+    left: 170px;
+    color: #adb5bd;
+    font-size: 15px;
+}
