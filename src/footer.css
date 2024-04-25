@@ -12,14 +12,13 @@
 
 .fa-facebook{
     position: relative;
-    top: 100px;
     color: white;
     font-size: 20px;
+    top: -30px;
     margin: 8px;
 }
 .fa-facebook:hover{
     position: relative;
-    top: 100px;
     color: red;
     font-size: 20px;
     margin: 8px;
@@ -27,14 +26,13 @@
 
 .fa-instagram{
     position: relative;
-    top: 98px;
     color: white;
     font-size: 22px;
     margin: 8px;
+    top: -30px;
 }
 .fa-instagram:hover{
     position: relative;
-    top: 98px;
     color: red;
     font-size: 22px;
     margin: 8px;
@@ -42,14 +40,13 @@
 
 .fa-square-twitter{
     position: relative;
-    top: 98px;
     color: white;
     font-size: 22px;
     margin: 8px;
+    top: -30px;
 }
 .fa-square-twitter:hover{
     position: relative;
-    top: 98px;
     color: red;
     font-size: 22px;
     margin: 8px;
@@ -57,14 +54,13 @@
 
 .fa-whatsapp{
     position: relative;
-    top: 98px;
     color: white;
     font-size: 22px;
     margin: 8px;
-}
+    top: -30px;
+    }
 .fa-whatsapp:hover{
     position: relative;
-    top: 98px;
     color: red;
     font-size: 22px;
     margin: 8px;
@@ -76,4 +72,94 @@
     left: 170px;
     color: #adb5bd;
     font-size: 15px;
+}
+
+.list{
+    text-decoration: none;
+    display: block;
+    color: white;
+    position: relative;
+    top: 90px;
+    left: 55px;
+    font-size: medium;
+    margin-bottom: 3px;
+}
+
+.list:hover{
+    color: red;
+}
+
+.wow{
+    position: relative;
+    top: 49px;
+    color: #adb5bd;
+    left: 250px;
+}
+
+.imgg1{
+    position: relative;
+    top: 90px;
+    width: 80px;
+    height: 45px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 3px;
+    padding: 12px;
+}
+.imgg2{
+    position: relative;
+    top: 90px;
+    width: 80px;
+    height: 45px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 3px;
+    padding: 7px;
+}
+.imgg3{
+    position: relative;
+    top: 90px;
+    width: 80px;
+    height: 45px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 3px;
+    padding: 14px;
+}
+
+.imgg1:hover{
+    cursor: pointer;
+}
+.imgg2:hover{
+    cursor: pointer;
+}
+.imgg3:hover{
+    cursor: pointer;
+}
+
+.conter{
+    width: 200px;
+    position: relative;
+    left: 105px;
+}
+
+.para{
+    color: white;
+    position: relative;
+    width: 300px;
+    left: 900px;
+    top: -170px;
+}
+
+.poo{
+    font-size: small;
+    color: #adb5bd;
+    position: relative;
+    top: -60px;
+    height: 0px;
+}
+
+.spp{
+    color: red;
+    cursor: pointer;
 }
