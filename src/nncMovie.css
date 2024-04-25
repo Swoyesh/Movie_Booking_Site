@@ -21,11 +21,6 @@
     opacity: 1;
 }
 
-.nancestor{
-    height: 0px;
-    opacity: 1px;
-}
-
 .card{
     position: relative;
     overflow: hidden;

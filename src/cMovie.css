@@ -1,17 +1,15 @@
-.bit{
+.btn-primary{
     background-color: transparent;
     border: 1.3px solid #008f00;
-    padding: 5px 1.5px 5px 1.5px;
     color: #008f00;
     font-size: 14px;
-    width: 10%;
-    text-decoration: none;
+    padding: 5px 1.5px 5px 1.5px;
+    width: 30%;
     margin: 3.5px;
     border-radius: 5px;
 }
 
-.bit:hover{
-    text-decoration: none;
+.btn-primary:hover{
     color: white;
     background-color: #009a00;
     border: none;
@@ -23,7 +21,7 @@
 
 .card{
     overflow: hidden;
-    width: 140px;
+    width: 100px;
 }
 
 .card-body{

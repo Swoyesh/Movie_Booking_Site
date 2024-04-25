@@ -9,7 +9,33 @@ import "../MC.css"
 const Moviecollec = () => {
   let sign1 = "<"
   let sign2 = ">"
-  let movies = ["Crakk - Jeetega Toh Jiyegaa", "Teri Baaton Mein Aisa Uljha Jiya", "Gurkha Warrior", "DayaRani"]
+  let movie = ["Crakk - Jeetega Toh Jiyegaa", "Teri Baaton Mein Aisa Uljha Jiya", "Gurkha Warrior", "DayaRani"]
+  let mo1 = []
+  let mo2 = []
+  let mo3 = []
+  let total = movie.length
+  let [movies, setMovies] = useState(mo1)
+  const check = ()=>{
+    let i;
+    console.log(total)
+    let newL = total%4;
+     if(total <= 4){
+      mo1 = movie.concat(mo1).slice(0, 5)
+      setMovies(mo1)
+     }else if(total <=8 && total > 4){
+      mo1 = movie.concat(mo1).slice(0, 4)
+      mo2 = movie.concat(mo2).slice(4, 5+newL)
+      setMovies(mo1)
+     }else{
+      mo1 = movie.concat(mo1).slice(0, 4)
+      mo3 = movie.concat(mo3).slice(8, 9+newL)
+      setMovies(mo1)
+     }
+  }
+  useEffect(() => {
+    check()
+  }, [])
+  
   let time = ["2 Hours 30 Mins", "2 Hours", "2 Hours 5 Mins", "2 Hours"]
   let types = ["ACTION, SURVIVAL THRILLER", "DRAMA, ROMANCE", "WAR", "LOVE STORY"]
   let photos = [p1, m1, q1, n1]
