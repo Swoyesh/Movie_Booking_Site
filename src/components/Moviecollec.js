@@ -9,47 +9,42 @@ import "../MC.css"
 const Moviecollec = () => {
   let sign1 = "<"
   let sign2 = ">"
-  let movie = ["Crakk - Jeetega Toh Jiyegaa", "Teri Baaton Mein Aisa Uljha Jiya", "Gurkha Warrior", "DayaRani"]
-  let mo1 = []
-  let mo2 = []
-  let mo3 = []
+  let movie = ["Crakk - Jeetega Toh Jiyegaa", "Teri Baaton Mein Aisa Uljha Jiya", "Gurkha Warrior", "DayaRani", "hi", 'hello']
   let total = movie.length
+  let newL = total%4;
+  let mo1 = []
+  mo1 = movie.slice(0, 4)
+  let mo2 = []
+  mo2 = movie.slice(4, 5+newL)
+  let mo3 = []
+  mo3 = movie.slice(8, 9+newL)
+  let i
   let [movies, setMovies] = useState(mo1)
   const check = ()=>{
-    let i;
-    console.log(total)
-    let newL = total%4;
      if(total <= 4){
-      mo1 = movie.concat(mo1).slice(0, 5)
+      i = 1;
       setMovies(mo1)
      }else if(total <=8 && total > 4){
-      mo1 = movie.concat(mo1).slice(0, 4)
-      mo2 = movie.concat(mo2).slice(4, 5+newL)
+      i = 2
       setMovies(mo1)
      }else{
-      mo1 = movie.concat(mo1).slice(0, 4)
-      mo3 = movie.concat(mo3).slice(8, 9+newL)
+      i = 3;
       setMovies(mo1)
      }
   }
-  useEffect(() => {
-    check()
-  }, [])
-  
   let time = ["2 Hours 30 Mins", "2 Hours", "2 Hours 5 Mins", "2 Hours"]
   let types = ["ACTION, SURVIVAL THRILLER", "DRAMA, ROMANCE", "WAR", "LOVE STORY"]
   let photos = [p1, m1, q1, n1]
   let counter = -1
   let [vi, setVi] = useState("hidden")
   useEffect(() => {
-    if(counter>3){
+    check()
+    if(i>= 2){
       setVi("visible")
-    }
-    if(counter<=3){
+    }else{
       setVi("hidden")
     }
-    console.log(counter)
-  }, [counter]);
+  }, [i]);
   let ss1 = {
     height: "25px", 
     textAlign: "center", 
@@ -80,10 +75,18 @@ const Moviecollec = () => {
     color: "#000B4B",
     visibility: vi
   }
+
+  const prev = ()=>{
+    setMovies(mo1)
+  }
+
+  const next = ()=>{
+    setMovies(mo2)
+  }
   return (
     <div className='container'>
       <div className='noice' style={{margin: "0px", display: "flex", justifyContent: "center", alignItems: "center"}}>
-      <button className = 'goody' style={ss1}><strong ><span style={{textAlign: "center", fontSize: "25px"}}><a>{sign1}</a></span></strong></button>
+      <button className = 'goody' style={ss1} onClick={prev}><strong ><span style={{textAlign: "center", fontSize: "25px"}}><a>{sign1}</a></span></strong></button>
       </div>
       <div className='container' style={{position: "relative", padding: "0px"}}>
         {movies.map((element)=>{
@@ -91,7 +94,7 @@ const Moviecollec = () => {
           return <Cmovie title = {element} duration = {time[counter]} genre = {types[counter]} img = {photos[counter]} type = {"PG"}/>
         })}
         <div className='noice' style={{margin: "0px", display: "flex", justifyContent: "center", alignItems: "center"}}>
-      <button className='goody' style={ss2}><strong ><span style={{textAlign: "center", fontSize: "25px"}}><a>{sign2}</a></span></strong></button>
+      <button className='goody' style={ss2} onClick={next}><strong ><span style={{textAlign: "center", fontSize: "25px"}}><a>{sign2}</a></span></strong></button>
       </div>
         </div>
     </div>
