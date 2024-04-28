@@ -9,26 +9,30 @@ import "../MC.css"
 const Moviecollec = () => {
   let sign1 = "<"
   let sign2 = ">"
-  let movie = ["Crakk - Jeetega Toh Jiyegaa", "Teri Baaton Mein Aisa Uljha Jiya", "Gurkha Warrior", "DayaRani", "hi", 'hello']
+  let movie = ["Crakk - Jeetega Toh Jiyegaa", "Teri Baaton Mein Aisa Uljha Jiya", "Gurkha Warrior", "DayaRani", "hi", 'hello', 'fs', 'hg', 'mi']
   let total = movie.length
   let newL = total%4;
   let mo1 = []
   mo1 = movie.slice(0, 4)
   let mo2 = []
-  mo2 = movie.slice(4, 5+newL)
+  if(total>=8){
+    mo2 = movie.slice(4, 8)
+  }else{
+    mo2 = movie.slice(4, 5+newL)
+  }
   let mo3 = []
   mo3 = movie.slice(8, 9+newL)
-  let i
+  let [i, setI] = useState(0)
   let [movies, setMovies] = useState(mo1)
   const check = ()=>{
      if(total <= 4){
-      i = 1;
+      setI(1)
       setMovies(mo1)
      }else if(total <=8 && total > 4){
-      i = 2
+      setI(2)
       setMovies(mo1)
      }else{
-      i = 3;
+      setI(3)
       setMovies(mo1)
      }
   }
@@ -75,18 +79,35 @@ const Moviecollec = () => {
     color: "#000B4B",
     visibility: vi
   }
-
   const prev = ()=>{
-    setMovies(mo1)
+      if(i == 2){
+        setMovies(mo1)
+      }
+      if(i == 3){
+        if(movies[0] == mo2[0]){
+          setMovies(mo1)
+        }else if(movies[0] == mo3[0]){
+          setMovies(mo2)
+        }
+      }
   }
 
   const next = ()=>{
-    setMovies(mo2)
+    if(i == 2){
+      setMovies(mo2)
+    }
+    if(i == 3){
+      if(movies[0] == mo2[0]){
+        setMovies(mo3)
+      }else if(movies[0] == mo1[0]){
+        setMovies(mo2)
+      }
+    }
   }
   return (
     <div className='container'>
       <div className='noice' style={{margin: "0px", display: "flex", justifyContent: "center", alignItems: "center"}}>
-      <button className = 'goody' style={ss1} onClick={prev}><strong ><span style={{textAlign: "center", fontSize: "25px"}}><a>{sign1}</a></span></strong></button>
+      <button className = 'goody' style={ss1} onClick={prev} ><strong ><span style={{textAlign: "center", fontSize: "25px"}} type = "button"><a>{sign1}</a></span></strong></button>
       </div>
       <div className='container' style={{position: "relative", padding: "0px"}}>
         {movies.map((element)=>{
