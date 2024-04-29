@@ -9,7 +9,7 @@ import "../MC.css"
 const Moviecollec = () => {
   let sign1 = "<"
   let sign2 = ">"
-  let movie = ["Crakk - Jeetega Toh Jiyegaa", "Teri Baaton Mein Aisa Uljha Jiya", "Gurkha Warrior", "DayaRani", "hi", 'hello', 'fs', 'hg', 'mi']
+  let movie = ["Crakk - Jeetega Toh Jiyegaa", "Teri Baaton Mein Aisa Uljha Jiya", "Gurkha Warrior", "Daya Rani", "Happy New Year", "Deewar", "Barzigar", "Darr", "Tere Namm", "October"]
   let total = movie.length
   let newL = total%4;
   let mo1 = []
@@ -80,6 +80,9 @@ const Moviecollec = () => {
     visibility: vi
   }
   const prev = ()=>{
+    if(movies[0] == mo1[0]){
+      console.log("hello")
+    }
       if(i == 2){
         setMovies(mo1)
       }
@@ -96,6 +99,7 @@ const Moviecollec = () => {
     if(i == 2){
       setMovies(mo2)
     }
+  
     if(i == 3){
       if(movies[0] == mo2[0]){
         setMovies(mo3)
@@ -106,10 +110,10 @@ const Moviecollec = () => {
   }
   return (
     <div className='container'>
-      <div className='noice' style={{margin: "0px", display: "flex", justifyContent: "center", alignItems: "center"}}>
+      <div className='container' style={{position: "relative", padding: "0px", justifyContent: "center", display: "flex"}}>
+      <div className='noice' style={{margin: "0px", display: "flex", justifyContent: "flex-end", alignItems: "center"}}>
       <button className = 'goody' style={ss1} onClick={prev} ><strong ><span style={{textAlign: "center", fontSize: "25px"}} type = "button"><a>{sign1}</a></span></strong></button>
       </div>
-      <div className='container' style={{position: "relative", padding: "0px"}}>
         {movies.map((element)=>{
           {counter++}
           return <Cmovie title = {element} duration = {time[counter]} genre = {types[counter]} img = {photos[counter]} type = {"PG"}/>

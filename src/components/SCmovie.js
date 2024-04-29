@@ -38,8 +38,8 @@ const SCmovie = (props) => {
                 </div>
                 </div>
                 {/* </div> */}
-                <div className='ancestor'>
-                <div className="card-body" style={{backgroundColor: "#182356"}}>
+                <div className='ancestor' style={{height: "0px", backgroundColor: "#000B4B"}}>
+                <div className="card-body" style={{backgroundColor: "#182356", height: "120px"}}>
                     
                     <h5 className="card-title" style={{color: "white", fontSize: "21px"}}><strong>{props.title}</strong></h5>
                     <p className="card-text" style={{color: "gray", fontSize: "12px", textAlign: "left"}}>{props.duration}</p>
