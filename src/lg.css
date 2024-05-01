@@ -29,8 +29,90 @@
     color: white;
 }
 
-.ipt{
+.ipt1{
     position: relative;
     left: 20px;
     top: 20px;
+    color: black;
+    padding: 7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: none;
+    width: 90%;
+}
+
+.ipt2{
+    position: relative;
+    left: 20px;
+    top: 40px;
+    color: black;
+    padding: 7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: none;
+    width: 90%;
+}
+
+.ipt1:focus{
+    border: none;
+    outline: none;
+}
+
+.ipt2:focus{
+    border: none;
+    outline: none;
+}
+
+.btttn{
+    position: relative;
+    top: 60px;
+    left: 20px;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.9);
+    border: none;
+    padding: 8px 18px 8px 18px;
+    border-radius: 5px;
+}
+
+.btttn:hover{
+    background-color: rgba(255, 0, 0, 0.6);
+}
+
+.google-sign-in {
+  position: relative;
+  top: 80px;
+  left: 140px;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-sign-in:hover {
+  background-color: #3e80f0;
+}
+
+.google-sign-in:active {
+  background-color: #3e80f0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.google-sign-in::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20"><path fill="#fff" d="M43.611 20.019H4.389c-2.646 0-4.611 2.155-4.611 4.61a4.611 4.611 0 0 0 4.611 4.61h3.611v13.178 c0 1.052.805 1.946 1.809 2.127l11.054 2.272c.856.176 1.809-.498 1.809-1.344V27.309h3.611c2.646 0 4.611-2.155 4.611-4.61a4.611 4.611 0 0 0-4.611-4.61zm-23.344-8.88c-1.344 0-2.426.556-3.172 1.411L1.809 33.81c-.856.176-1.344 1.052-1.128 1.809.216 1.052 1.344 1.809 2.646 1.809h26.611c1.302 0 2.43-1.004 2.646-2.272.216-1.274.332-2.587.332-3.944z"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 10px;
 }
