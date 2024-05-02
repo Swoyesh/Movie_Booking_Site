@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import logo from "../logo.jpg";
 import movieContext from '../Context/movieContext';
 import '../navbar.css';
@@ -21,6 +21,12 @@ const Navbar = () => {
     const starter = ()=>{
         setActiveTab("HOME")
     }
+
+    useEffect(() => {
+        console.log(activeTab)
+      setActiveTab(activeTab === "HOME"?"HOME": null)
+    }, [])
+    
 
     return (
         <>

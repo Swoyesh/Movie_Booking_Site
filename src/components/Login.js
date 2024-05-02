@@ -38,10 +38,10 @@ const Login = () => {
             <input className='ipt2' onChange={handleChange} name='password' id='password' type='password' placeholder='Password'></input>
             <div>
               <button className='btttn' type='submit'>Sign In</button>
-              <span style={{color: "red", position:"relative", top: "60px", left: "165px", cursor: "pointer"}}>Forgot Password?</span>
+              <Link to="/fpassword" style={{textDecoration: "none"}}><span className='nspan' style={{color: "red", position:"relative", top: "60px", right: "-180px", cursor: "pointer"}}>Forgot Password?</span></Link>
             </div>
             <div>
-              <span style={{color: "white", fontWeight: "bold", fontSize: "18px", top: "-10px", left:"140px", position: "relative"}}>OR Login With</span>
+              <span style={{color: "white", fontWeight: "bold", fontSize: "18px", top: "-10px", left:"19%", position: "relative"}}>OR Login With</span>
               <input type='image' src={gg} className='g-inp'></input>
             </div>
             </form>

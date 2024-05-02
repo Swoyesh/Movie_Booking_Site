@@ -126,3 +126,7 @@
     border: none;
     outline: none;
 }
+
+.nspan{
+    text-decoration: none;
+}
