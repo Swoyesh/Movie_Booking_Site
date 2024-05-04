@@ -1,10 +1,35 @@
-import React from 'react'
+import {React ,useEffect} from 'react'
 import Footer from './Footer'
 import '../Forgo.css'
 import bg from '../bg.png'
 import rell from '../rell.png'
 
 const Forgo = () => {
+  const randomNumber = (min, max)=>{
+    let num
+    num = Math.floor(Math.random() * (max - min) + min)
+    return num
+  }
+
+  const capt = ()=>{
+    let g_text = ""
+    for(let i = 0; i<3; i++){
+      g_text += String.fromCharCode(randomNumber(65, 90))
+      g_text += String.fromCharCode(randomNumber(97, 122))  
+      g_text += String.fromCharCode(randomNumber(48, 57))
+    }
+    return g_text
+  }
+
+  const generate = ()=>{
+    capt()
+  }
+  
+  useEffect(() => {
+    generate()
+  }, [])
+  
+
   return (
     <>
     <div className='container' style={{width: "35%", backgroundColor: "#081243", display: "flex", justifyContent: "center", boxShadow: "0px 0px 30px #fff", borderRadius: "6px", position: "relative", top: "60px", overflow:"hidden", border: "1px solid white", alignItems: "stretch"}}>
@@ -14,7 +39,7 @@ const Forgo = () => {
               <form>
                 <input type='text' style={{position: "relative", borderRadius: "5px", border: "none", padding: "7px", width: "90%", backgroundColor: "#fff", marginLeft: "18px", justifyContent:"flex-start"}} className='iinp'></input>
                 <img src = {bg} className='cpt' height= "50px" width="200px"></img>
-                <input type = "image" src={rell} style={{height: "30px", position: "relative", top: "55px", left: "-180px" ,backgroundColor:"yellow", borderRadius: "5px", cursor: "pointer"}}/>
+                <input type = "image" src={rell} style={{height: "30px", position: "relative", top: "55px", left: "-180px" ,backgroundColor:"yellow", borderRadius: "5px", cursor: "pointer"}} onClick={generate}/>
                 <input type='text' style={{position: "relative", borderRadius: "5px", border: "none", padding: "7px", width: "90%", backgroundColor: "#fff", top: "20px", marginLeft: "18px"}} className='iinp' placeholder="Enter Captcha Text"></input>
                 <div style={{width: "80%"}}>
                 <button type='submit' className='sbtn'>Submit</button>

@@ -23,7 +23,6 @@ const Navbar = () => {
     }
 
     useEffect(() => {
-        console.log(activeTab)
       setActiveTab(activeTab === "HOME"?"HOME": null)
     }, [])
     
