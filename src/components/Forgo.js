@@ -1,6 +1,8 @@
 import React from 'react'
 import Footer from './Footer'
 import '../Forgo.css'
+import bg from '../bg.png'
+import rell from '../rell.png'
 
 const Forgo = () => {
   return (
@@ -11,6 +13,8 @@ const Forgo = () => {
             <div className='former'>
               <form>
                 <input type='text' style={{position: "relative", borderRadius: "5px", border: "none", padding: "7px", width: "90%", backgroundColor: "#fff", marginLeft: "18px", justifyContent:"flex-start"}} className='iinp'></input>
+                <img src = {bg} className='cpt' height= "50px" width="200px"></img>
+                <input type = "image" src={rell} style={{height: "30px", position: "relative", top: "55px", left: "-180px" ,backgroundColor:"yellow", borderRadius: "5px", cursor: "pointer"}}/>
                 <input type='text' style={{position: "relative", borderRadius: "5px", border: "none", padding: "7px", width: "90%", backgroundColor: "#fff", top: "20px", marginLeft: "18px"}} className='iinp' placeholder="Enter Captcha Text"></input>
                 <div style={{width: "80%"}}>
                 <button type='submit' className='sbtn'>Submit</button>
