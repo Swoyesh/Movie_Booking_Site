@@ -43,3 +43,12 @@
     margin-bottom: 25px;
     left: 5%;
 }
+
+.centered{
+    position: absolute;
+    top: 50%;
+    transform: translate(30%, -55%);
+    font-weight: bold;
+    font-size: 25px;
+    color: rgb(40, 40, 40);
+}

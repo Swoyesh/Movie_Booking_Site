@@ -1,10 +1,13 @@
-import {React ,useEffect} from 'react'
+import {React ,useEffect, useRef, useState} from 'react'
 import Footer from './Footer'
 import '../Forgo.css'
 import bg from '../bg.png'
 import rell from '../rell.png'
 
 const Forgo = () => {
+  let [check, setCheck] = useState("")
+  let [ftext, setFtext] = useState("")
+
   const randomNumber = (min, max)=>{
     let num
     num = Math.floor(Math.random() * (max - min) + min)
@@ -13,7 +16,7 @@ const Forgo = () => {
 
   const capt = ()=>{
     let g_text = ""
-    for(let i = 0; i<3; i++){
+    for(let i = 0; i<2; i++){
       g_text += String.fromCharCode(randomNumber(65, 90))
       g_text += String.fromCharCode(randomNumber(97, 122))  
       g_text += String.fromCharCode(randomNumber(48, 57))
@@ -22,13 +25,27 @@ const Forgo = () => {
   }
 
   const generate = ()=>{
-    capt()
+    let start = capt()
+    let final = [...start].sort(()=> Math.random()-0.5).join("  ")
+    setFtext(final)
   }
   
   useEffect(() => {
     generate()
   }, [])
   
+  const sub = ()=>{
+    if(check == ftext.replace(/ /g, "")){
+      console.log("accepted")
+      return true
+    }else{
+      console.log("not accepted")
+    }
+  }
+
+  const changer = (e)=>{
+    setCheck(e.target.value)
+  }
 
   return (
     <>
@@ -38,11 +55,14 @@ const Forgo = () => {
             <div className='former'>
               <form>
                 <input type='text' style={{position: "relative", borderRadius: "5px", border: "none", padding: "7px", width: "90%", backgroundColor: "#fff", marginLeft: "18px", justifyContent:"flex-start"}} className='iinp'></input>
-                <img src = {bg} className='cpt' height= "50px" width="200px"></img>
-                <input type = "image" src={rell} style={{height: "30px", position: "relative", top: "55px", left: "-180px" ,backgroundColor:"yellow", borderRadius: "5px", cursor: "pointer"}} onClick={generate}/>
-                <input type='text' style={{position: "relative", borderRadius: "5px", border: "none", padding: "7px", width: "90%", backgroundColor: "#fff", top: "20px", marginLeft: "18px"}} className='iinp' placeholder="Enter Captcha Text"></input>
+                <div style={{position: "relative"}}>
+                    <input type='image' src = {bg} className='cpt' height= "50px" width="200px"></input>
+                    <div className='centered'><i>{ftext}</i></div>
+                    <button onClick={generate} type = "button" style={{height: "0px", border: "none", backgroundColor: "#081243"}}><img src={rell} style={{height: "30px", top: "5px", position: "relative", left: "-185px" ,backgroundColor:"yellow", borderRadius: "5px", cursor: "pointer"}}></img></button>
+                </div>
+                <input type='text' style={{position: "relative", borderRadius: "5px", border: "none", padding: "7px", width: "90%", backgroundColor: "#fff", top: "20px", marginLeft: "18px"}} className='iinp' placeholder="Enter Captcha Text" onChange={changer}></input>
                 <div style={{width: "80%"}}>
-                <button type='submit' className='sbtn'>Submit</button>
+                <button type='button' className='sbtn'onClick={sub}>Submit</button>
                 <button type='submit' className='cbtn'>Cancel</button>
                 </div>
               </form>
