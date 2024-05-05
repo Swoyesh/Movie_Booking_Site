@@ -1,4 +1,4 @@
-import {React ,useEffect, useRef, useState} from 'react'
+import {React ,useEffect, useState} from 'react'
 import Footer from './Footer'
 import '../Forgo.css'
 import bg from '../bg.png'
@@ -37,7 +37,6 @@ const Forgo = () => {
   const sub = ()=>{
     if(check == ftext.replace(/ /g, "")){
       console.log("accepted")
-      return true
     }else{
       console.log("not accepted")
     }

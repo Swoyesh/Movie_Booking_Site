@@ -1,4 +1,7 @@
+const { type } = require('@testing-library/user-event/dist/type')
 const mongoose = require('mongoose')
+const { link } = require('../routes/movie')
+const { Link } = require('react-router-dom')
 const {Schema} = mongoose
 
 const MovieSchema = new Schema({
@@ -12,6 +15,18 @@ const MovieSchema = new Schema({
     },
     seat: {
         type: String, 
+        required: true
+    }, 
+    rating: {
+        type: String, 
+        required: true
+    },
+    details: {
+        type: String,
+        required: true
+    },
+    day: {
+        type: Date,
         required: true
     }
 })
