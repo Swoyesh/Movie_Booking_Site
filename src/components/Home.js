@@ -11,7 +11,7 @@ import Footer from './Footer'
 const Home = () => {
   return (
     <>
-    <div>
+    <div className='topper'>
       <ImageCollection/>
     </div>
     <div className='mnav'>

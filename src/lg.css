@@ -2,8 +2,8 @@
     color: rgba(255, 255, 255, 0.6);
     margin: 5px;
     position: relative;
-    top: 25px;
-    left: 20px;
+    top: 4vh;
+    left: 1vw;
     font-weight: bolder;
     font-size: 25px;
     cursor: pointer;
@@ -19,8 +19,8 @@
     color: rgba(255, 255, 255, 1);
     margin: 5px;
     position: relative;
-    top: 25px;
-    left: 20px;
+    top: 4vh;
+    left: 1.3vw;
     font-weight: bolder;
     font-size: 25px;
     cursor: pointer;
@@ -31,8 +31,8 @@
 
 .ipt1{
     position: relative;
-    left: 20px;
-    top: 20px;
+    left: 1.5vw;
+    top: 3.5vh;
     color: black;
     padding: 7px;
     padding-top: 8px;
@@ -46,8 +46,8 @@
 .ipt2{
     display: block;
     position: relative;
-    left: 20px;
-    top: 40px;
+    left: 1.5vw;
+    top: 6.5vh;
     color: black;
     padding: 7px;
     padding-top: 8px;
@@ -70,8 +70,8 @@
 
 .btttn{
     position: relative;
-    top: 60px;
-    left: 20px;
+    top: 9vh;
+    left: 1.5vw;
     color: white;
     background-color: #db322b;
     border: none;
@@ -95,8 +95,8 @@
 .h-ipt{
     display: block;
     position: relative;
-    left: 20px;
-    top: 20px;
+    left: 1.5vw;
+    top:3vh;
     color: black;
     padding: 7px;
     padding-top: 8px;
@@ -109,8 +109,8 @@
 
 .h-btttn{
     position: relative;
-    top: 140px;
-    left: 20px;
+    top: 21vh;
+    left: 1.5vw;
     color: white;
     background-color: #42c956;
     border: none;

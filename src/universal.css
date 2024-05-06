@@ -1,23 +1,28 @@
+.topper{
+    position: relative;
+    top: -12vh;
+}
+
 .mnav{
     position: relative;
-    top: 200px;
+    top: 15vw;
 }
 
 .stat{
     position: relative;
-    top: 210px;
+    top: 16vw;
 }
 .mcollec{
     position: relative;
-    top: 230px;
+    top: 18vw;
 }
 
 .up{
     position: relative;
-    top: 370px;
+    top: 30vw;
 }
 
 .bottom{
     position: relative;
-    top: 400px;
+    top: 30.5vw;
 }

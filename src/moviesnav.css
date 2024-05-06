@@ -5,7 +5,8 @@
 
 .dates{
     position: relative;
-    left: 50px;
+    left: 5vw;
+    overflow: hidden;
 }
 
 .dice{

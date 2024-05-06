@@ -5,7 +5,7 @@
 
 .sbtn{
     position: relative;
-    top: 40px;
+    top: 5.5vh;
     margin-bottom: 40px;
     border: none;
     margin: 10px 10px 40px 10px;
@@ -25,7 +25,7 @@
 }
 .cbtn{
     position: relative;
-    top: 40px;
+    top: 5.5vh;
     margin-bottom: 40px;
     border: none;
     margin: 10px 10px 40px 10px;

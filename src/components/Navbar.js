@@ -31,7 +31,7 @@ const Navbar = () => {
         <>
             <nav className="navbar navbar-expand-lg" style={{ backgroundColor: "transparent", cursor: "pointer" }}>
                 <div className="container-fluid">
-                    <Link to ="/"><img alt='logo' src={logo} height={"50px"} width={"130px"} style={{ left: "60px", position: "relative", cursor: "pointer" }} onClick={starter}/></Link>
+                    <Link to ="/"><img alt='logo' src={logo} height={"50vh"} width={"130vh"} style={{ left: "5vw", position: "relative", cursor: "pointer" }} onClick={starter}/></Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -46,7 +46,7 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-                <Link to="/login"><button type="button" className="btn" style={{ borderRadius: "30px", right: "150px", borderColor: "red", borderWidth: "2px", position: "relative", color: "white", zIndex: "5"}} onClick={neutral}><strong>Login</strong></button></Link>
+                <Link to="/login"><button type="button" className="btn" style={{ borderRadius: "30px", right: "12vw", borderColor: "red", borderWidth: "2px", position: "relative", color: "white", zIndex: "5"}} onClick={neutral}><strong>Login</strong></button></Link>
             </nav>
         </>
     );

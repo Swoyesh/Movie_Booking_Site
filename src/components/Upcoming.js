@@ -53,14 +53,14 @@ let counter = -1;
         <Link href='#' className={active === "NR"? "act-linker" : "linker"} onClick={()=>clicked("NR", NR)}>Next Release</Link>
         <Link href='#' className={active === "CS"? "act-linker" : "linker"}  onClick={()=>clicked("CS", CS)}>Coming Soon</Link>
     </div>
-    <div className= "containers"style={{position:"relative", top: "75px"}}>
+    <div className= "containers"style={{position:"relative", top: "10vh"}}>
     {nactive.map((element)=>{
           {counter++}
           return <SCmovie title = {element.name} duration = {element.time} img = {element.photos} type = {element.release}/>
         })}
     </div>
     </div>
-    <div className='last' style={{color: "red", position: "relative", bottom: "200px"}}></div>
+    <div className='last' style={{color: "red", position: "relative", top: "-30vh"}}></div>
     </>
   )
 }

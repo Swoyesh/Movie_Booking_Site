@@ -24,22 +24,22 @@ const SCmovie = (props) => {
   return (
     <>
     {/* <div className='nancestor'> */}
-    <div className="card" style={{width: "16.5rem", margin: "15px", border: "none"}}>
+    <div className="card" style={{width: "16.5rem", margin: "15px", border: "none", height: "70vh"}}>
             <div onMouseMove={clicked1} onMouseOut={clicked2} className='timer' style = {{position: "relative",top: "-20px", backgroundColor: "red", height: "0%", textAlign: "left"}}>
                     <div><button className='bb2' style={s1}><i class="fa-thin fa-play" style={{margin: "8px"}}></i>Play Trailer</button></div>
             <div><button className='bb1' style={s1}><i class="fa-solid fa-eye" style={{margin: "8px"}}></i>View Details</button></div>
                     <button className='buttter'><i class="fa-regular fa-calendar" style = {{margin: "8px"}}></i>{type}</button>
                     
                 </div>
-                <div className='main' style={{height: "380px"}}>
+                <div className='main' style={{height: "57vh"}}>
                 <div className='img-div' style={s2} onMouseMove={clicked1} onMouseOut={clicked2}>
-                <img src={props.img} className="card-img-top" alt="..." height={"380px"} />
+                <img src={props.img} className="card-img-top" alt="..." height={"380vh"} />
                 
                 </div>
                 </div>
                 {/* </div> */}
-                <div className='ancestor' style={{height: "0px", backgroundColor: "#000B4B"}}>
-                <div className="card-body" style={{backgroundColor: "#182356", height: "120px"}}>
+                <div className='ancestor' style={{backgroundColor: "#000B4B"}}>
+                <div className="card-body" style={{backgroundColor: "#182356", height: "14vh"}}>
                     
                     <h5 className="card-title" style={{color: "white", fontSize: "21px"}}><strong>{props.title}</strong></h5>
                     <p className="card-text" style={{color: "gray", fontSize: "12px", textAlign: "left"}}>{props.duration}</p>

@@ -9,7 +9,7 @@ import "../MC.css"
 const Moviecollec = () => {
   let sign1 = "<"
   let sign2 = ">"
-  let movie = ["Crakk - Jeetega Toh Jiyegaa", "Teri Baaton Mein Aisa Uljha Jiya", "Gurkha Warrior", "Daya Rani", "Happy New Year", "Deewar", "Barzigar", "Darr", "Tere Namm", "October"]
+  let movie = ["Crakk - Jeetega Toh Jiyegaa", "Teri Baaton Mein Aisa Uljha Jiya", "Gurkha Warrior", "Daya Rani"]
   let total = movie.length
   let newL = total%4;
   let mo1 = []
