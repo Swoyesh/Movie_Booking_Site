@@ -10,13 +10,9 @@ const MovieSchema = new Schema({
         required: true
     },
     time: {
-        type: String, 
-        required: true
+        type: Array, 
+        "default": []
     },
-    seat: {
-        type: String, 
-        required: true
-    }, 
     rating: {
         type: String, 
         required: true
@@ -26,10 +22,14 @@ const MovieSchema = new Schema({
         required: true
     },
     day: {
-        type: Date,
+        type: Array,
+        "default" : []
+    }, 
+    img: {
+        type: String, 
         required: true
     }
 })
 
 const Movie = mongoose.model('movies', MovieSchema)
-module.exports(Movie)
+module.exports = Movie
