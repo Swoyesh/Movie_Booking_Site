@@ -17,16 +17,24 @@ const MovieSchema = new Schema({
         type: String, 
         required: true
     },
-    details: {
-        type: String,
+    synopsis:{
+        type: String, 
         required: true
     },
     day: {
-        type: Array,
-        "default" : []
-    }, 
+        type: Array, 
+        "default": []
+    },
     img: {
         type: String, 
+        required: true
+    }, 
+    genre: {
+        type: String, 
+        required: true
+    },
+    duration: {
+        type: String,
         required: true
     }
 })
