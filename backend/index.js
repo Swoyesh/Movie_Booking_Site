@@ -16,6 +16,10 @@ app.use("/api/auth", require("./routes/auth"))
 app.use(express.json())
 app.use("/api/movies", require("./routes/movie"))
 
+//Route for tickets.
+app.use(express.json())
+app.use("/api/tickets", require("./routes/ticket"))
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })

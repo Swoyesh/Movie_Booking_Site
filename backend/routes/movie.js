@@ -33,7 +33,7 @@ router.get('/getmovies',
     async(req, res)=>{
         try {
             console.log("hello")
-            const movies = await Movie.find({name: req.name.id})
+            const movies = await Movie.find()
            
             res.send(movies)
         } catch (error) {
