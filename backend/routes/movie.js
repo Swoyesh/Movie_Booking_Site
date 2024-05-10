@@ -32,9 +32,7 @@ async(req, res)=>{
 router.get('/getmovies',
     async(req, res)=>{
         try {
-            console.log("hello")
             const movies = await Movie.find()
-           
             res.send(movies)
         } catch (error) {
             res.status(500).send("Internal server error")

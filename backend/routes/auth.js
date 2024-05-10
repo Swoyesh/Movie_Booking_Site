@@ -28,17 +28,18 @@ router.get("/signup", [
     }
     const salt = await bcrypt.genSalt(10)
     const secPass = await bcrypt.hash(password, salt)
-    user = User.create({
+    user = await User.create({
       name: req.body.name,
       email: email,
       password: secPass
     })
     const data = {
-      user: {
+      users: {
         id: user.id
       }
     }
-    const authToken = await jwt.sign(data, JWT_secret)
+    console.log(data)
+    const authToken = jwt.sign(data, JWT_secret)
     res.json({ authToken })
   } catch (error) {
     res.status(500).send({ error: "Internal server error!!" })
@@ -85,7 +86,7 @@ router.post('/getuser', fetchUser, async (req, res) => {
   try {
     id = req.user.id
     const user = await User.findById(id)
-    res.json(user)
+    res.send(user)
   } catch (error) {
     res.status(500).send({ error: "Internal server error!!" })
   }

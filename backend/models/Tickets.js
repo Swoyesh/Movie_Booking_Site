@@ -2,13 +2,13 @@ const mongoose = require('mongoose')
 const {Schema} = mongoose
 
 const ticketSchema = new Schema({
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "user"
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref: "users"
     },
     seats: {
-        type: Array,
-        "default": []
+        type: [String],
+        required: true
     },
     total: {
         type: Number,
