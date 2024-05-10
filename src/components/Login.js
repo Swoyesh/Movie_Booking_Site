@@ -4,8 +4,19 @@ import nns from '../nns.jpg'
 import Footer from './Footer'
 import '../lg.css'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const navigate = useNavigate()
+  const host = "http://localhost:5000"
+  const [credentials, setCredentials] = useState({
+    f_name: "",
+    l_name: "",
+    email: "",
+    mobile: "",
+    password: "",
+    cpassword: ""
+  })
   let[dis1, setDis1] = useState("")
   let[dis2, setDis2] = useState("none")
     let [active, setActive] = useState("Sign In")
@@ -19,7 +30,6 @@ const Login = () => {
         setDis1("none")
       setDis2("")
     }
-    const [credentials, setCredentials] = useState({email: "", password: ""})
     const handleChange = (e)=>{
       setCredentials({...credentials, [e.target.name]: e.target.value})
     }
@@ -54,7 +64,7 @@ const Login = () => {
                 <input className='h-ipt' type='number' placeholder='Mobile*' style={{top: "12vh"}}></input> 
                 <input className='h-ipt' type='password' placeholder='Password (min 4 characters)*' style={{top: "15vh"}}></input> 
                 <input className='h-ipt' type='password' placeholder='Confirm Password*' style={{top: "18vh"}}></input> 
-                <button className='h-btttn' type='submit'>Sign Up</button>
+                <button className='h-btttn' type='submit' >Sign Up</button>
               </form>
             </div>
         </div>

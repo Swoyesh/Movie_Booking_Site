@@ -9,12 +9,19 @@ const fetchUser = require('../middleware/fetchUser')
 const JWT_secret = "firsttry"
 
 //To create a user. No login required!!
-router.get("/signup", [
-  body("name", "Enter a valid name").isLength({ min: 3 }),
+router.post("/signup", [
+  body("f_name", "Enter a valid first name").isLength({ min: 3 }),
+  body("l_name", "Enter a valid last name").isLength({ min: 3 }),
   body("email", "Enter a valid email").isEmail(),
-  body("password", "Password must be atleast 5 characters").isLength({
-    min: 5,
+  body("mobile", "Enter a valid number").isInt(),
+  body("password", "Password must be atleast 4 characters").isLength({
+    min: 4,
   }),
+  body("cpassword", "Password must be atleast 4 characters").isLength({min: 4}).custom((value, {req})=>{
+    if(value !== req.body.password){
+      throw new Error("Password does not match")
+    }
+  })
 ], async (req, res) => {
   const errors = validationResult(req)
   if (!errors.isEmpty()) {
@@ -29,9 +36,12 @@ router.get("/signup", [
     const salt = await bcrypt.genSalt(10)
     const secPass = await bcrypt.hash(password, salt)
     user = await User.create({
-      name: req.body.name,
+      f_name: req.body.f_name,
+      l_name: req.body.l_name,
       email: email,
-      password: secPass
+      mobile: req.body.mobile,
+      password: secPass,
+      cpassword: secPass
     })
     const data = {
       users: {
