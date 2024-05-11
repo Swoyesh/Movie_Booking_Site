@@ -1,6 +1,6 @@
 const express = require('express')
 const router = require('express').Router();
-const { body, validationResult } = require('express-validator')
+const { body, validationResult, ExpressValidator } = require('express-validator')
 const User = require('../models/User')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
@@ -13,48 +13,50 @@ router.post("/signup", [
   body("f_name", "Enter a valid first name").isLength({ min: 3 }),
   body("l_name", "Enter a valid last name").isLength({ min: 3 }),
   body("email", "Enter a valid email").isEmail(),
-  body("mobile", "Enter a valid number").isInt(),
-  body("password", "Password must be atleast 4 characters").isLength({
-    min: 4,
-  }),
-  body("cpassword", "Password must be atleast 4 characters").isLength({min: 4}).custom((value, {req})=>{
-    if(value !== req.body.password){
-      throw new Error("Password does not match")
+  body("mobile", "Enter a valid number").isLength({min: 10}),
+  body("password", "Password must be at least 4 characters").isLength({ min: 4 }),
+  body("cpassword").custom((value, { req }) => {
+    if (value !== req.body.password) {
+      throw new Error("Passwords do not match");
     }
+    return true;
   })
 ], async (req, res) => {
-  const errors = validationResult(req)
+  let success = false
+  const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    res.status(400).json({ errors: errors.array })
+    return res.status(400).json({success, errors: errors.array() });
   }
+
   try {
-    const { email, password } = req.body
-    let user = await User.findOne({ email: req.body.email })
+    // Check if email already exists
+    let user = await User.findOne({ email: req.body.email });
     if (user) {
-      res.status(400).json({ error: "Email already exists!!" })
+      return res.status(400).json({ error: "Email already exists!!" });
     }
-    const salt = await bcrypt.genSalt(10)
-    const secPass = await bcrypt.hash(password, salt)
+
+    // Hash password
+    const salt = await bcrypt.genSalt(10);
+    const secPass = await bcrypt.hash(req.body.password, salt);
+    // Create user
     user = await User.create({
       f_name: req.body.f_name,
       l_name: req.body.l_name,
-      email: email,
+      email: req.body.email,
       mobile: req.body.mobile,
       password: secPass,
       cpassword: secPass
-    })
-    const data = {
-      users: {
-        id: user.id
-      }
-    }
-    console.log(data)
-    const authToken = jwt.sign(data, JWT_secret)
-    res.json({ authToken })
+    });
+
+    // Generate JWT token
+    const data = { user: { id: user.id } };
+    success = true
+    const authToken = jwt.sign(data, JWT_secret);
+    res.json({success, authToken });
   } catch (error) {
-    res.status(500).send({ error: "Internal server error!!" })
+    res.status(500).send({success, error: "Internal server error!!" });
   }
-})
+});
 
 //To authenticate a user. No login required!!
 
