@@ -69,11 +69,13 @@ router.post(
     }),
   ],
   async (req, res) => {
+    let success = false
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
-      res.status(400).json({ errors: errors.array })
+      res.status(400).json({success, errors: errors.array })
     }
     try {
+      console.log("hello")
       const user = await User.findOne({ email: req.body.email })
       const passwordComapre = await bcrypt.compare(req.body.password, user.password)
       if (!user || !passwordComapre) {
@@ -85,9 +87,10 @@ router.post(
         }
       }
       const authToken = jwt.sign(data, JWT_secret)
-      res.json({ authToken })
+      success = true
+      res.json({success, authToken })
     } catch (error) {
-      res.status(500).send({ error: "Internal server error!!" })
+      res.status(500).send({success, error: "Internal server error!!" })
     }
   }
 )
