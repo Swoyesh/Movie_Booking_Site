@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom'
 const Login = () => {
   const navigate = useNavigate()
   const host = "http://localhost:5000"
-
   const [credentials1, setCredentials1] = useState({
     email: "",
     password: ""
@@ -67,7 +66,6 @@ const Login = () => {
     }
 
     const si_s_h = async(e)=>{
-      e.preventDefault()
       const response = await fetch(`${host}/api/auth/login`, {
         method: "POST",
         headers: {
@@ -82,14 +80,18 @@ const Login = () => {
       console.log(json.success)
       if(json.success){
         navigate("/home")
+        localStorage.setItem("auth-token", json.authToken)
       }else{
         setFdis("")
       }
+      window.location.reload()
     }
 
     const handleChange1 = (e)=>{
       setCredentials1({...credentials1, [e.target.name]: e.target.value})
     }
+
+    
     
     useEffect(() => {
       setFdis("none")
