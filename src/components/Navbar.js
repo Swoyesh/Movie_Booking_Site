@@ -5,11 +5,12 @@ import "../navbar.css";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    const context = useContext(movieContext);
+    const context = useContext(movieContext)
+    let {userFunc, user} = context
     const { header1, header2 } = context;
     const [pos, setPos] = useState("relative")
     const [disp, setDisp] = useState("none")
-    const [activeTab, setActiveTab] = useState("HOME"); // State to track the active tab
+    const [activeTab, setActiveTab] = useState("HOME")
     const [title, setTitle] = useState("Login")
     const handleMenuClick = (tab) => {
         setActiveTab(tab);
@@ -44,6 +45,7 @@ const Navbar = () => {
   const neutral = () => {
     window.location.reload()
     localStorage.removeItem("auth-token")
+    localStorage.removeItem("name")
   };
 
   const starter = () => {
@@ -64,6 +66,11 @@ const Navbar = () => {
         setPos("relative")
     }
   }, []);
+
+  useEffect(() => {
+    userFunc()
+  }, [])
+  
 
   return (
     <>
@@ -174,7 +181,7 @@ const Navbar = () => {
                 display: disp
               }}
             ></i>
-                <p style={{color: "white", zIndex: "5", position: "relative", right: "7.5vw", fontSize: "15px", display: disp}}>hello</p>
+                <p style={{color: "white", zIndex: "5", position: "relative", right: "7.5vw", fontSize: "15px", display: disp}}>{user.f_name}</p>
             <Link to={title === "Login" ? "/login": "/home"}>
               <button
                 type="button"

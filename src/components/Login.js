@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import gg from '../gg.png'
 import nns from '../nns.jpg'
 import Footer from './Footer'
 import '../lg.css'
 // eslint-disable-next-line
-import { Link, Navigate } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import movieContext from '../Context/movieContext'
 
 const Login = () => {
+  let context = useContext(movieContext)
+  let {userFunc, user} = context
+  
   const navigate = useNavigate()
   const host = "http://localhost:5000"
   const [credentials1, setCredentials1] = useState({
@@ -66,6 +70,7 @@ const Login = () => {
     }
 
     const si_s_h = async(e)=>{
+      e.preventDefault()
       const response = await fetch(`${host}/api/auth/login`, {
         method: "POST",
         headers: {
@@ -81,17 +86,20 @@ const Login = () => {
       if(json.success){
         navigate("/home")
         localStorage.setItem("auth-token", json.authToken)
+        userFunc()
       }else{
         setFdis("")
       }
-      window.location.reload()
+      if(localStorage.getItem("auth-token")){
+        window.location.reload()
+      }
     }
 
     const handleChange1 = (e)=>{
       setCredentials1({...credentials1, [e.target.name]: e.target.value})
     }
 
-    
+    localStorage.setItem("name", user.f_name)
     
     useEffect(() => {
       setFdis("none")

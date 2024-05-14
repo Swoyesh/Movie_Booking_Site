@@ -74,8 +74,7 @@ router.post(
     if (!errors.isEmpty()) {
       res.status(400).json({success, errors: errors.array })
     }
-    try {
-      console.log("hello")
+    try {``
       const user = await User.findOne({ email: req.body.email })
       const passwordComapre = await bcrypt.compare(req.body.password, user.password)
       if (!user || !passwordComapre) {
@@ -97,10 +96,11 @@ router.post(
 
 //Get user information. Login required!!
 
-router.post('/getuser', fetchUser, async (req, res) => {
+router.post('/getuser', fetchUser, 
+async (req, res) => {
   try {
-    id = req.user.id
-    const user = await User.findById(id)
+    userId = req.user.id
+    const user = await User.findById(userId)
     res.send(user)
   } catch (error) {
     res.status(500).send({ error: "Internal server error!!" })
