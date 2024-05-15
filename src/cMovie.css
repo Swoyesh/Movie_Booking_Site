@@ -27,7 +27,7 @@
 .card-body{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    height: 100px;
+    height: 70px;
     z-index: 2;
     overflow:hidden;
 }

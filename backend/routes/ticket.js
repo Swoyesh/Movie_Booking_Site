@@ -31,6 +31,7 @@ router.get("/getseats", fetchUser,
     async(req, res)=>{
         try {
             const s_seats = await Ticket.find()
+            console.log(s_seats)
             res.send(s_seats)
         } catch (error) {
             res.status(500).json({ message: "Internal server error" });
