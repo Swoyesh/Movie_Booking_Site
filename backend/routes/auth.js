@@ -32,7 +32,7 @@ router.post("/signup", [
     // Check if email already exists
     let user = await User.findOne({ email: req.body.email });
     if (user) {
-      return res.status(400).json({ error: "Email already exists!!" });
+      return res.status(400).json({success, error: "Email already exists!!" });
     }
 
     // Hash password

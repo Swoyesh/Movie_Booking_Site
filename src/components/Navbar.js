@@ -106,7 +106,7 @@ const Navbar = () => {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                position: pos
+                position: "relative"
               }}
             >
               <Link

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import gg from '../gg.png'
 import nns from '../nns.jpg'
 import Footer from './Footer'
@@ -12,6 +12,8 @@ const Login = () => {
   let context = useContext(movieContext)
   let {userFunc, user} = context
   
+  let inputRefs = useRef([])
+
   const navigate = useNavigate()
   const host = "http://localhost:5000"
   const [credentials1, setCredentials1] = useState({
@@ -26,6 +28,8 @@ const Login = () => {
     password: "",
     cpassword: ""
   })
+  const [col, setCol] = useState("red")
+  const [strength, setStrength] = useState("weak")
   let[dis1, setDis1] = useState("")
   let[dis2, setDis2] = useState("none")
   let[fdis, setFdis] = useState("none")
@@ -61,11 +65,17 @@ const Login = () => {
       })
       console.log(credentials)
       const json = await response.json()
+      console.log(json)
       if(json.success){
         localStorage.setItem("auth-token", json.authToken)
         navigate("/home")
       }else{
-        
+        inputRefs.current.forEach(inputRef =>{
+          inputRef.style.color = "black"
+          if(inputRef.value === json.errors[0].value){
+            inputRef.style.color = "red"
+          }
+        })
       }
     }
 
@@ -134,12 +144,20 @@ const Login = () => {
             </div>
              <div className='first-hidden' style={{display: dis2}}>
               <form onSubmit={su_h_submit}>
-                <input className='h-ipt' type='text' placeholder='First Name*' onChange={handleChange2} name='f_name'></input> 
-                <input className='h-ipt' type='text' placeholder='Last Name*' style={{top: "6vh"}} onChange={handleChange2} name='l_name'></input> 
-                <input className='h-ipt' type='email' placeholder='Email*' style={{top: "9vh"}} onChange={handleChange2} name='email'></input> 
-                <input className='h-ipt' type='number' placeholder='Mobile*' style={{top: "12vh"}} onChange={handleChange2} name='mobile'></input> 
-                <input className='h-ipt' type='password' placeholder='Password (min 4 characters)*' style={{top: "15vh"}} onChange={handleChange2} name='password'></input> 
-                <input className='h-ipt' type='password' placeholder='Confirm Password*' style={{top: "18vh"}} onChange={handleChange2} name='cpassword'></input> 
+                <input className='h-ipt' type='text' placeholder='First Name*' onChange={handleChange2} name='f_name' ref={(ref)=> inputRefs.current[0]= ref}></input> 
+                <input className='h-ipt' type='text' placeholder='Last Name*' style={{top: "6vh"}} onChange={handleChange2} name='l_name'ref={(ref)=> inputRefs.current[1]= ref}></input> 
+                <input className='h-ipt' type='email' placeholder='Email*' style={{top: "9vh"}} onChange={handleChange2} name='email'ref={(ref)=> inputRefs.current[2]= ref}></input> 
+                <input className='h-ipt' type='number' placeholder='Mobile*' style={{top: "12vh"}} onChange={handleChange2} name='mobile'ref={(ref)=> inputRefs.current[3]= ref}></input> 
+                <div>
+                <input className='h-ipt' type='password' placeholder='Password (min 4 characters)*' style={{top: "15vh", display: "flex", justifyContent: "stretch"}} onChange={handleChange2} name='password'ref={(ref)=> inputRefs.current[4]= ref}></input>
+                <div style={{position: "relative", top: "12.75vh", width: "100%", height: "0px"}}>
+                  <hr style={{border: "1.5px solid", borderColor: {col}}}></hr>
+                  </div> 
+                  <div style={{position: "relative", top: "13vh", height: "0px"}}>
+                    <span style={{color: "red"}}>{strength}</span>
+                  </div>
+                  </div>
+                <input className='h-ipt' type='password' placeholder='Confirm Password*' style={{top: "18vh"}} onChange={handleChange2} name='cpassword'ref={(ref)=> inputRefs.current[5]= ref}></input> 
                 <button className='h-btttn' type='submit'>Sign Up</button>
               </form>
             </div>
