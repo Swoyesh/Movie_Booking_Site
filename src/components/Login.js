@@ -150,12 +150,12 @@ const Login = () => {
                 <input className='h-ipt' type='number' placeholder='Mobile*' style={{top: "12vh"}} onChange={handleChange2} name='mobile'ref={(ref)=> inputRefs.current[3]= ref}></input> 
                 <div>
                 <input className='h-ipt' type='password' placeholder='Password (min 4 characters)*' style={{top: "15vh", display: "flex", justifyContent: "stretch"}} onChange={handleChange2} name='password'ref={(ref)=> inputRefs.current[4]= ref}></input>
-                <div style={{position: "relative", top: "12.75vh", width: "100%", height: "0px"}}>
+                {/* <div style={{position: "relative", top: "12.75vh", width: "100%", height: "0px"}}>
                   <hr style={{border: "1.5px solid", borderColor: {col}}}></hr>
                   </div> 
                   <div style={{position: "relative", top: "13vh", height: "0px"}}>
                     <span style={{color: "red"}}>{strength}</span>
-                  </div>
+  </div> work to be done */}
                   </div>
                 <input className='h-ipt' type='password' placeholder='Confirm Password*' style={{top: "18vh"}} onChange={handleChange2} name='cpassword'ref={(ref)=> inputRefs.current[5]= ref}></input> 
                 <button className='h-btttn' type='submit'>Sign Up</button>

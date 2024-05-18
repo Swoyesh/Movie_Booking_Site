@@ -4,10 +4,12 @@ import movieContext from './movieContext';
 const MovieState = (props) => {
   const i = 1
   const host = "http://localhost:5000";
-  const header1 = useState("MY TICKETS")[0]; // Extracting the state value
-  const header2 = useState("BOOKING")[0]; // Extracting the state value
+  const header1 = useState("MY TICKETS"); // Extracting the state value
+  const header2 = useState("BOOKING"); // Extracting the state value
   const [user, setUser] = useState("");
   const [mov, setMov] = useState([]);
+  let [dis1, setDis1] = useState("")
+  let [dis2, setDis2] = useState("none")
 
   const userFunc = async () => {
     const response = await fetch(`${host}/api/auth/getuser`, {
@@ -35,7 +37,7 @@ const MovieState = (props) => {
   };
   
   return (
-    <movieContext.Provider value={{ header1, header2, userFunc, user, mov, getMovies}}>
+    <movieContext.Provider value={{ header1, header2, userFunc, user, mov, getMovies, setMov, dis1, setDis1, dis2, setDis2}}>
       {props.children}
     </movieContext.Provider>
   );
