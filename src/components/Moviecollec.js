@@ -5,7 +5,7 @@ import movieContext from '../Context/movieContext';
 
 const Moviecollec = () => {
   let context = useContext(movieContext);
-  const { getMovies, dis1, dis2, day } = context;
+  const { getMovies, dis1, dis2, day} = context;
 
   let sign1 = "<";
   let sign2 = ">";
@@ -163,6 +163,7 @@ const Moviecollec = () => {
             genre={element.genre}
             img={element.img}
             type={element.rating}
+            time = {element.time}
           />
         ))}
         <div className='noice' style={{ margin: "0px", display: "flex", justifyContent: "center", alignItems: "center" }}>
