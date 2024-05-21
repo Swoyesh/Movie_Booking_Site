@@ -1,6 +1,6 @@
 //individual movies
 
-import React, { useState } from "react";
+import React, { useState} from "react";
 import "../cMovie.css";
 import { Link } from "react-router-dom";
 
@@ -9,6 +9,24 @@ const Cmovie = (props) => {
   const [zoom, setZoom] = useState("1");
   const { type } = props;
 
+  const st1 = {
+    fontSize: "12.5px",
+    width: "60px",
+  };
+  const date = new Date();
+  const hours = date.getHours();
+  const st2 = {
+    fontSize: "12.5px",
+    width: "60px",
+    cursor: "not-allowed",
+    opacity: "0.6",
+    pointerEvents: "auto",
+    color: "gray",
+    border: "1px solid gray",
+    backgroundColor: "#182356",
+  };
+
+  const [choose, setChoose] = useState("1");
   const clicked1 = () => {
     setZoom("1.1");
     setDisplay1(0);
@@ -25,6 +43,19 @@ const Cmovie = (props) => {
   let s2 = {
     scale: zoom,
   };
+
+  const chooser = (e) => {
+    console.log(e);
+    if (hours > parseInt(e)) {
+      setChoose("2");
+    }
+  };
+
+  const constant = () => {
+    setChoose("1");
+    console.log(choose);
+  };
+
   return (
     <>
       <div
@@ -100,12 +131,14 @@ const Cmovie = (props) => {
             const authToken = localStorage.getItem("auth-token");
             return (
               <Link
-                to={authToken === null ? "/login" : ""}
+                to={authToken === null && choose == "1" ? "/login" : ""}
                 key={element}
               >
                 <button
                   className="btn btn-primary"
-                  style={{ fontSize: "12.5px", width: "60px" }}
+                  style={hours <= parseInt(element) ? st1 : st2}
+                  onMouseMove={() => chooser(element)}
+                  onMouseLeave={constant}
                 >
                   {element}
                 </button>
