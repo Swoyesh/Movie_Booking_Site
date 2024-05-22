@@ -72,13 +72,13 @@ router.post(
     let success = false
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
-      res.status(400).json({success, errors: errors.array })
+      return res.status(400).json({success, errors: errors.array })
     }
     try {``
       const user = await User.findOne({ email: req.body.email })
       const passwordComapre = await bcrypt.compare(req.body.password, user.password)
       if (!user || !passwordComapre) {
-        res.status(400).json({ error: "Invalid login credentials!!" })
+        return res.status(400).json({ error: "Invalid login credentials!!" })
       }
       const data = {
         user: {
@@ -87,9 +87,9 @@ router.post(
       }
       const authToken = jwt.sign(data, JWT_secret)
       success = true
-      res.json({success, authToken })
+      return res.json({success, authToken })
     } catch (error) {
-      res.status(500).send({success, error: "Internal server error!!" })
+      return res.status(500).send({success, error: "Internal server error!!" })
     }
   }
 )
