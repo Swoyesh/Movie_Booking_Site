@@ -28,8 +28,52 @@ const Login = () => {
     password: "",
     cpassword: ""
   })
-  const [col, setCol] = useState("red")
-  const [strength, setStrength] = useState("weak")
+  const [col, setCol] = useState("gray")
+  const [strength, setStrength] = useState("Too Short")
+  const [widthh, setWidthh] = useState("1.5vw")
+  const [diss, setDiss] = useState("none")
+
+  function checker(input_string) { 
+    const n = input_string.length; 
+    let hasLower = false; 
+    let hasUpper = false; 
+    let hasDigit = false; 
+    let specialChar = false; 
+    const normalChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "; 
+    
+    for (let i = 0; i < n; i++) { 
+      if (input_string[i] >= "a" && input_string[i] <= "z") { 
+        hasLower = true; 
+      } 
+      if (input_string[i] >= "A" && input_string[i] <= "Z") { 
+        hasUpper = true; 
+      } 
+      if (input_string[i] >= "0" && input_string[i] <= "9") { 
+        hasDigit = true; 
+      } 
+      if (!normalChars.includes(input_string[i])) { 
+        specialChar = true; 
+      } 
+    } 
+    if (hasLower && hasUpper && hasDigit && specialChar && n >= 8) { 
+      setStrength("Strong")
+      setCol("green")
+        setWidthh("24vw")
+    } else if ((hasLower || hasUpper) && specialChar && n >= 6) { 
+      setStrength("Moderate")
+      setCol("orange")
+        setWidthh("14vw")
+    } else if(n>=4){
+      setStrength("Weak")
+      setCol("red")
+        setWidthh("7vw")
+    }else if(n<4){
+      setStrength("Too Short")
+      setCol("gray")
+      setWidthh("1.5vw")
+    }
+  } 
+
   let[dis1, setDis1] = useState("")
   let[dis2, setDis2] = useState("none")
   let[fdis, setFdis] = useState("none")
@@ -46,6 +90,11 @@ const Login = () => {
     }
     const handleChange2 = (e)=>{
       setCredentials({...credentials, [e.target.name]: e.target.value})
+    }
+    const handleChange2s = (e)=>{
+      setCredentials({...credentials, [e.target.name]: e.target.value})
+      checker(e.target.value)
+      setDiss("")
     }
     const su_h_submit = async (e)=>{
       e.preventDefault();
@@ -149,13 +198,13 @@ const Login = () => {
                 <input className='h-ipt' type='email' placeholder='Email*' style={{top: "9vh"}} onChange={handleChange2} name='email'ref={(ref)=> inputRefs.current[2]= ref}></input> 
                 <input className='h-ipt' type='number' placeholder='Mobile*' style={{top: "12vh"}} onChange={handleChange2} name='mobile'ref={(ref)=> inputRefs.current[3]= ref}></input> 
                 <div>
-                <input className='h-ipt' type='password' placeholder='Password (min 4 characters)*' style={{top: "15vh", display: "flex", justifyContent: "stretch"}} onChange={handleChange2} name='password'ref={(ref)=> inputRefs.current[4]= ref}></input>
-                {/* <div style={{position: "relative", top: "12.75vh", width: "100%", height: "0px"}}>
-                  <hr style={{border: "1.5px solid", borderColor: {col}}}></hr>
+                <input className='h-ipt' type='password' placeholder='Password (min 4 characters)*' style={{top: "15vh"}} onChange={handleChange2s} name='password'ref={(ref)=> inputRefs.current[4]= ref}></input>
+                <div style={{position: "relative", top: "12.75vh",marginLeft: "20px", width: "100%", height: "0px"}}>
+                  <hr style={{borderWidth: "1.4px", width: widthh,  borderColor: col, opacity: "2", borderStyle: "solid", display: diss}}></hr>
                   </div> 
                   <div style={{position: "relative", top: "13vh", height: "0px"}}>
-                    <span style={{color: "red"}}>{strength}</span>
-  </div> work to be done */}
+                    <span style={{color: col, padding: "20px", fontSize: "12px", fontWeight: "bold", display: diss}}>{strength}</span>
+  </div> 
                   </div>
                 <input className='h-ipt' type='password' placeholder='Confirm Password*' style={{top: "18vh"}} onChange={handleChange2} name='cpassword'ref={(ref)=> inputRefs.current[5]= ref}></input> 
                 <button className='h-btttn' type='submit'>Sign Up</button>
