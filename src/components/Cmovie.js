@@ -8,13 +8,21 @@ const Cmovie = (props) => {
   const [display1, setDisplay1] = useState(-140);
   const [zoom, setZoom] = useState("1");
   const { type } = props;
+  let hello = []
+  
+  props.time.forEach(element => {
+    hello.push(element.split(":"))
+  });
 
+  console.log(hello)
   const st1 = {
     fontSize: "12.5px",
     width: "60px",
   };
   const date = new Date();
   const hours = date.getHours();
+  const min = date.getMinutes();
+  console.log(date.getTime())
   const st2 = {
     fontSize: "12.5px",
     width: "60px",
@@ -45,7 +53,6 @@ const Cmovie = (props) => {
   };
 
   const chooser = (e) => {
-    console.log(e);
     if (hours > parseInt(e)) {
       setChoose("2");
     }
@@ -53,7 +60,6 @@ const Cmovie = (props) => {
 
   const constant = () => {
     setChoose("1");
-    console.log(choose);
   };
 
   return (
@@ -127,7 +133,7 @@ const Cmovie = (props) => {
           >
             {props.genre}
           </p>
-          {props.time.map((element) => {
+          {hello.map((element) => {
             const authToken = localStorage.getItem("auth-token");
             return (
               <Link
@@ -136,11 +142,11 @@ const Cmovie = (props) => {
               >
                 <button
                   className="btn btn-primary"
-                  style={hours <= parseInt(element) ? st1 : st2}
+                  style={hours < parseInt(element[0]) && min >= parseInt(element[1]) ? st1 : st2}
                   onMouseMove={() => chooser(element)}
                   onMouseLeave={constant}
                 >
-                  {element}
+                  {element[0]}:{element[1]}
                 </button>
               </Link>
             );

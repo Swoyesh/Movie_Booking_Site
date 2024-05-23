@@ -4,15 +4,47 @@ import "../nncMovie.css"
 const SCmovie = (props) => {
     const [display1, setDisplay1] = useState(-140)
     const[zoom, setZoom] = useState("1")
+    const s11 = {
+        color: "white", 
+        fontSize: "21px"
+    }
+    const s21 = {
+        fontSize: "21px",
+        animation: "changes 0.75s ease",
+        color: "red"
+    }
+    const s12 = {
+        color: "gray", 
+        fontSize: "12px", 
+        textAlign: "left"
+    }
+    const s22 = {
+        color: "red", 
+        fontSize: "12px", 
+        animation: "changess 0.75s ease",
+        textAlign: "left"
+    }
     const {type} = props
     const clicked1 = ()=>{
         setZoom("1.1")
         setDisplay1(0)
     }
-
+    const [styler1, setStyler1] = useState(s11)
+    const [styler2, setStyler2] = useState(s12)
+    
     const clicked2 = ()=>{
         setZoom("1")
         setDisplay1(-150)
+    }
+
+    const st1 = ()=>{
+        setStyler1(s21)
+        setStyler2(s22)
+    }
+
+    const st2 = ()=>{
+        setStyler1(s11)
+        setStyler2(s12)
     }
 
     let s1 = {
@@ -39,10 +71,10 @@ const SCmovie = (props) => {
                 </div>
                 {/* </div> */}
                 <div className='ancestor' style={{backgroundColor: "#000B4B"}}>
-                <div className="card-body" style={{backgroundColor: "#182356", height: "14vh"}}>
+                <div className="card-body" style={{backgroundColor: "#182356", height: "14vh", cursor: "pointer"}} onMouseMove={st1} onMouseLeave={st2}>
                     
-                    <h5 className="card-title" style={{color: "white", fontSize: "21px"}}><strong>{props.title}</strong></h5>
-                    <p className="card-text" style={{color: "gray", fontSize: "12px", textAlign: "left"}}>{props.duration}</p>
+                    <h5 className="card-title" style={styler1}><strong>{props.title}</strong></h5>
+                    <p className="card-text" style={styler2}>{props.duration}</p>
                 </div>
                 </div>
             </div>

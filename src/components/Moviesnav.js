@@ -28,10 +28,10 @@ const Moviesnav = () => {
   }
 
   const cm = (index)=>{
-    if(arr[index]<ld.getDate()){
+    if(arr[index]<=ld.getDate() && arr[index]>=ld.getDate()-8){
       return d.getMonth()
     }else{
-      return d. getMonth()
+      return d. getMonth()+1
     }
   }
 

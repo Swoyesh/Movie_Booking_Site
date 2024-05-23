@@ -119,3 +119,19 @@
     opacity: 1;
 }
 
+@keyframes changes{
+    0%{
+        color: white;
+    }
+    100%{
+        color: red;
+    }
+}
+@keyframes changess{
+    0%{
+        color: gray;
+    }
+    100%{
+        color: red;
+    }
+}
