@@ -10,7 +10,7 @@ const SCmovie = (props) => {
     }
     const s21 = {
         fontSize: "21px",
-        animation: "changes 0.75s ease",
+        animation: "changesss 0.75s ease",
         color: "red"
     }
     const s12 = {

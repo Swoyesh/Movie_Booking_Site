@@ -62,6 +62,25 @@ const Cmovie = (props) => {
     setChoose("1");
   };
 
+  const fs1 = {
+    textDecoration: "none", 
+    color: "red"
+  }
+  const fs2 = {
+    textDecoration: "none", 
+    color: "white"
+  }
+const [nice, setNice] = useState(fs1)
+
+const mover = ()=>{
+  setNice(fs2)
+}
+
+const leaverr = ()=>{
+  setNice(fs1)
+}
+
+
   return (
     <>
       <div
@@ -80,11 +99,12 @@ const Cmovie = (props) => {
             textAlign: "right",
             right: "10px",
           }}
-        >
-          <button className="b1" style={s1}>
-            <i class="fa-regular fa-ticket" style={{ margin: "8px" }}></i>Buy
+        > <Link to="/buy" style={nice}>
+          <button className="b1" style={s1} onMouseMove={mover} onMouseLeave={leaverr}>
+           <i class="fa-regular fa-ticket" style={{ margin: "8px"}}></i>Buy
             Tickets
           </button>
+          </Link>
           <button className="b2" style={s1}>
             <i class="fa-thin fa-play" style={{ margin: "8px" }}></i>Play
             Trailer
@@ -142,7 +162,7 @@ const Cmovie = (props) => {
               >
                 <button
                   className="btn btn-primary"
-                  style={hours < parseInt(element[0]) && min >= parseInt(element[1]) ? st1 : st2}
+                  style={hours < parseInt(element[0])? st1 : (hours == parseInt(element[0]) && min <= parseInt(element[1]) ? st1 : st2)}
                   onMouseMove={() => chooser(element)}
                   onMouseLeave={constant}
                 >

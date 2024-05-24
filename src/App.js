@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Contact from './components/Contact';
 import Career from './components/Career';
 import Ticker from './components/Ticker';
+import Buy from './components/Buy'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path = "contact" element = {<Contact/>}/>
       <Route path = "career" element = {<Career/>}/>
       <Route path = "rate" element = {<Ticker/>}/>
+      <Route path = "buy" element = {<Buy/>}/>
     </Routes>
     </BrowserRouter>
     </MovieState>

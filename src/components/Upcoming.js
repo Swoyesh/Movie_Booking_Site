@@ -6,8 +6,6 @@ import ala from '../ala.jpg'
 import mnik from '../mnik.jpg'
 import tf from '../12f.jpeg'
 
-//#adb5bd #db322b "Poppins, sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji"
-
 const Upcoming = () => {
     const first = {
         name: "Aladdin",

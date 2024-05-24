@@ -1,0 +1,7 @@
+.ancs >.container{
+    background-color: #182356;
+    position: relative;
+    margin-bottom: 55px;
+    background-image: (to bottom, rgba(0, 12, 100, 0.5), rgba(0, 0, 0, 0));
+    top: -65px;
+}
