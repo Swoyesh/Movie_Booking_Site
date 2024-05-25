@@ -6,11 +6,10 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const context = useContext(movieContext)
-    let {userFunc, user} = context
+    let {userFunc, user, activeTab, setActiveTab} = context
     const { header1, header2 } = context;
     const [pos, setPos] = useState("relative")
     const [disp, setDisp] = useState("none")
-    const [activeTab, setActiveTab] = useState("HOME")
     const [title, setTitle] = useState("Login")
     const handleMenuClick = (tab) => {
         setActiveTab(tab);

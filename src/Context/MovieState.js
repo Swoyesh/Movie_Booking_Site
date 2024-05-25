@@ -10,6 +10,7 @@ const MovieState = (props) => {
   const [dis1, setDis1] = useState("")
   const [dis2, setDis2] = useState("none")
   const [day, setDay] = useState("today")
+  const [activeTab, setActiveTab] = useState("HOME")
 
   const userFunc = async () => {
     const response = await fetch(`${host}/api/auth/getuser`, {
@@ -36,7 +37,7 @@ const MovieState = (props) => {
     // console.log(mov)
   };
   return (
-    <movieContext.Provider value={{ header1, header2, userFunc, user, getMovies, dis1, setDis1, dis2, setDis2, day, setDay}}>
+    <movieContext.Provider value={{ header1, header2, userFunc, user, getMovies, dis1, setDis1, dis2, setDis2, day, setDay, activeTab, setActiveTab}}>
       {props.children}
     </movieContext.Provider>
   );

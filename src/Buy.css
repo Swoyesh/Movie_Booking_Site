@@ -1,7 +1,25 @@
-.ancs >.container{
+.ancs > .container {
     background-color: #182356;
     position: relative;
     margin-bottom: 55px;
-    background-image: (to bottom, rgba(0, 12, 100, 0.5), rgba(0, 0, 0, 0));
     top: -65px;
-}
+  }
+  
+  .firsts {
+    background-image: linear-gradient(rgba(24, 35, 86, 1), rgba(0, 11, 75, 0));
+    position: relative;
+    height: 450px; /* Ensure height is sufficient to see the gradient */
+    z-index: 1;
+  }
+  
+  .lasts {
+    background-image: linear-gradient(rgba(0, 11, 75, 0), rgba(24, 35, 86, 1));
+    height: 100px;
+    position: relative;
+    top: 33.1vh;
+    z-index: 2;
+  }
+  
+  img {
+    display: block; /* Remove any default margin */
+  }

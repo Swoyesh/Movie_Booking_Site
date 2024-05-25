@@ -6,10 +6,19 @@ const Buy = () => {
   return (
     <Layout>
       <div className="ancs">
-        <div className="container" style={{ height: "800px", display: "flex"}}>
-          <div className="first" style={{width: "100%", position: "relative"}}><img src="https://m.media-amazon.com/images/M/MV5BM2YwYTkwNjItNGQzNy00MWE1LWE1M2ItOTMzOGI1OWQyYjA0XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_QL75_UX500_CR0,213,500,281_.jpg" width="100%" height="500px" style={{zIndex: "0"}}></img></div>
-          
-          {/* <div className="last" style={{width: "100%"}}></div> */}
+        <div className="container" style={{ height: "800px", display: "flex", flexDirection: "column" }}>
+          <div style={{ width: "100%" }}>
+            <div className="firsts" style={{ width: "100%", position: "relative" }}>
+              <img 
+                src="https://variety.com/wp-content/uploads/2023/08/ONEPIECE_Unit_10613RC.jpg" 
+                alt="One Piece" 
+                style={{ width: "100%", height: "450px", position: "absolute", top: 0, left: 0, zIndex: 0 }}
+              />
+              <div className="lasts" style={{ width: "100%", position: "relative", top: "350px" }}></div>
+            </div>
+          </div>
+          <div style={{ position: "relative"}}>
+          </div>
         </div>
       </div>
     </Layout>

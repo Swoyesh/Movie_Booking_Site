@@ -1,10 +1,13 @@
 //individual movies
 
-import React, { useState} from "react";
+import React, { useContext, useState} from "react";
 import "../cMovie.css";
 import { Link } from "react-router-dom";
+import movieContext from "../Context/movieContext";
 
 const Cmovie = (props) => {
+  const context = useContext(movieContext)
+  const {acitveTab, setActiveTab} = context
   const [display1, setDisplay1] = useState(-140);
   const [zoom, setZoom] = useState("1");
   const { type } = props;
@@ -80,6 +83,10 @@ const leaverr = ()=>{
   setNice(fs1)
 }
 
+const newer = ()=>{
+  setActiveTab("")
+}
+
 
   return (
     <>
@@ -100,7 +107,7 @@ const leaverr = ()=>{
             right: "10px",
           }}
         > <Link to="/buy" style={nice}>
-          <button className="b1" style={s1} onMouseMove={mover} onMouseLeave={leaverr}>
+          <button className="b1" style={s1} onMouseMove={mover} onMouseLeave={leaverr} onClick={newer}>
            <i class="fa-regular fa-ticket" style={{ margin: "8px"}}></i>Buy
             Tickets
           </button>
