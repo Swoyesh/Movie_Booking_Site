@@ -102,33 +102,33 @@
 
 .imgg1{
     position: relative;
-    top: 14vh;
     width: 6.5vw;
     height: 7vh;
     margin: 5px;
     background-color: white;
     border-radius: 3px;
     padding: 12px;
+    display: inline;
 }
 .imgg2{
     position: relative;
-    top: 14vh;
     width: 6.5vw;
     height: 7vh;
     margin: 5px;
     background-color: white;
     border-radius: 3px;
     padding: 7px;
+    display: inline;
 }
 .imgg3{
     position: relative;
-    top: 14vh;
     width: 6.5vw;
     height: 7vh;
     margin: 5px;
     background-color: white;
     border-radius: 3px;
     padding: 14px;
+    display: inline;
 }
 
 .imgg1:hover{
@@ -142,6 +142,7 @@
 }
 
 .conter{
+    top: 14vh;
     width: 16vw;
     position: relative;
     left: 10vw;

@@ -23,3 +23,45 @@
   img {
     display: block; /* Remove any default margin */
   }
+  
+  ul{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+    text-align: justify;
+  }
+
+  .justified-list {
+    text-align: justify;
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  
+  .justified-list::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+  body{
+    font-family: "Poppins", sans-serif,"Segoe UI","Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+  }
+
+  .justified-list {
+  text-align: justify;
+  width: 100%;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.justified-list .item {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px; /* Adjust spacing as needed */
+}
