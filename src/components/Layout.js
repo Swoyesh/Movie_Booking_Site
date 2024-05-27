@@ -1,10 +1,12 @@
 import React from 'react'
 import Footer from './Footer'
+import Status from './Status'
 
 const Layout = ({children}) => {
   return (
-    <div style={{height: "300px"}}>
+    <div>
         {children}
+        {/* <Status/> */}
         <Footer/>
     </div>
   )

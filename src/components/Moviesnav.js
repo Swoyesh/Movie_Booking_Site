@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import "../moviesnav.css"
 import { Link } from 'react-router-dom'
 import movieContext from '../Context/movieContext'
@@ -62,7 +62,7 @@ const Moviesnav = () => {
     }
   return (
     <div className='container'>
-        <div className='text' style={style}><strong>Now Showing<span style={{color: "red"}}> .</span></strong></div>
+        <div className='text' style={style}><strong>Now Showing <span style={{backgroundColor: "red", height: "5px", width: "5px", display: "inline-block", borderRadius: "50%"}}></span></strong></div>
         <div className='dates'>
           <Link className={activeTab==="Today"?'actor':'dice'} onClick={()=>clicked11("Today")}>Today</Link>
           <Link className={activeTab==="Tomm"?'actor':'dice'} onClick={()=>clicked12("Tomm")}>Tomm</Link>
