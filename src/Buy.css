@@ -147,3 +147,35 @@
 .ances> .container{
   background-color: #182356;
 }
+
+.timerr{
+  border: 2px solid #4caf50;
+  padding: 20px;
+  margin: 10px;
+  text-decoration: none;
+  color: #4caf50;
+  text-align: center;
+  display: inline-block;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.timerr:hover{
+  background-color: #4caf50;
+  color: white;
+  animation: changer 0.5s ease;
+}
+
+@keyframes changer{
+  0%{
+    background-color: transparent;
+    color: #4caf50
+  }
+  100%{
+    background-color: #4caf50;
+    color: white;
+  }
+
+}

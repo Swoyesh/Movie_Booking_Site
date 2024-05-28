@@ -6,6 +6,7 @@ import movieContext from '../Context/movieContext'
 
 const Buy = () => {
   const context = useContext(movieContext)
+  const time = ['10:00 AM', "14:00 PM"]
   const { setDay } = context
   const d = new Date();
   const ld = new Date(d.getFullYear(), d.getMonth()+1, 0)
@@ -90,7 +91,7 @@ const Buy = () => {
               position: "relative",
               margin: "10px",
               width: "100%",
-              top: "-110px",
+              top: "-95px",
             }}
           >
             <div style={{ position: "relative", zIndex: "3" }}>
@@ -120,7 +121,7 @@ const Buy = () => {
                 >
                   One Piece
                 </h1>
-                <div style={{ display: "flex", position: "relative" }}>
+                <div style={{ display: "flex", position: "relative", top: "-10px"}}>
                   <hr
                     width="25vw"
                     style={{ border: "1.35px solid red", opacity: "1" }}
@@ -141,7 +142,7 @@ const Buy = () => {
                   style={{
                     fontSize: "15px",
                     fontWeight: "300",
-                    lineHeight: "1.5", /* Adjusted line height */
+                    lineHeight: "3", /* Adjusted line height */
                   }}
                 >
                   The greatest story of all time!!
@@ -171,7 +172,7 @@ const Buy = () => {
           </div>
         </div>
       </div>
-      <div className="container" style={{ flexDirection: "column"}}>
+      <div className="container" style={{ flexDirection: "column", width: "88%"}}>
         <h3 style={{ fontWeight: "bold", color: "white" }}>
           Viewing Times{" "}
           <span
@@ -207,8 +208,15 @@ const Buy = () => {
         </div>
       </div>
       <div className='ances' style={{margin: "20px", marginBottom: "60px"}}>
-        <div className='container' style={{height: "100px"}}>
-          
+        <div className='container' style={{height: "110px", borderRadius: "10px", width: "90%"}}>
+          <div style={{backgroundColor: "#db322b", width: "14%", display: "flex", alignItems: "flex-start", justifyContent: "flex-start", borderRadius: "10px 0px 0px 10px", position: "relative", left: "-12px"}}>
+            <span style={{color: "white", fontWeight: "bold", margin: "5px", marginTop: "10px", marginLeft: "16px", display: "inline-block", fontSize: "22px", fontFamily: "Arial Black", position: "absolute"}}>Audi 1</span>
+          </div>
+          <div >
+            {time.map((element)=>{
+              return <a className='timerr' style={{width: "82px"}}>{element}</a>
+            })}
+          </div>
         </div>
       </div>
     </Layout>
