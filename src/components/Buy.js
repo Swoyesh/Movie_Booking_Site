@@ -6,6 +6,7 @@ import movieContext from '../Context/movieContext'
 
 const Buy = () => {
   const context = useContext(movieContext)
+  const audis = ["Adui 1", "Audi 2", "Audi 3"]
   const time = ['10:00 AM', "14:00 PM"]
   const { setDay } = context
   const d = new Date();
@@ -147,24 +148,40 @@ const Buy = () => {
                 >
                   The greatest story of all time!!
                 </p>
-                <div className="justified-list" style={{ lineHeight: "1.5" }}>
+                <div className="justified-list" style={{ lineHeight: "1.5" , display: "flex", width: "100%", flexDirection: "row"}}>
+                  <div style={{position: 'absolute', flex: "1"}}>
                   <div className="item">
                     <span style={{ color: "#db322b" }}>Director : &nbsp;</span>{" "}
-                    Eiichiro Oda
+                    {/* Eiichiro Oda */}
                   </div>
                   <div className="item">
                     <span style={{ color: "#db322b" }}>Cast : &nbsp;</span>{" "}
-                    Luffy, Zoro, Nami
+                    {/* Luffy, Zoro, Nami */}
                   </div>
                   <div className="item">
                     <span style={{ color: "#db322b" }}>
                       Release On : &nbsp;
                     </span>{" "}
-                    June 5, 2024
+                    {/* June 5, 2024 */}
                   </div>
                   <div className="item">
                     <span style={{ color: "#db322b" }}>Director : &nbsp;</span>{" "}
+                    {/* Infinity */}
+                  </div>
+                  </div>
+                  <div style={{ position: "absolute", width: "100%", left: "120px"}}>
+                  <div className="item">
+                    Eiichiro Oda
+                  </div>
+                  <div className="item">
+                    Luffy, Zoro, Nami
+                  </div>
+                  <div className="item">
+                    June 5, 2024
+                  </div>
+                  <div className="item">
                     Infinity
+                  </div>
                   </div>
                 </div>
               </div>
@@ -208,16 +225,19 @@ const Buy = () => {
         </div>
       </div>
       <div className='ances' style={{margin: "20px", marginBottom: "60px"}}>
-        <div className='container' style={{height: "110px", borderRadius: "10px", width: "90%"}}>
-          <div style={{backgroundColor: "#db322b", width: "14%", display: "flex", alignItems: "flex-start", justifyContent: "flex-start", borderRadius: "10px 0px 0px 10px", position: "relative", left: "-12px"}}>
-            <span style={{color: "white", fontWeight: "bold", margin: "5px", marginTop: "10px", marginLeft: "16px", display: "inline-block", fontSize: "22px", fontFamily: "Arial Black", position: "absolute"}}>Audi 1</span>
-          </div>
-          <div >
-            {time.map((element)=>{
-              return <a className='timerr' style={{width: "82px"}}>{element}</a>
-            })}
+        
+          {audis.map((element)=>{
+            return <div className='container' style={{height: "110px", borderRadius: "10px", width: "90%", marginBottom: "20px", display: "flex", flexDirection: "row"}}>
+            <div style={{backgroundColor: "#db322b", width: "14%", display: "flex", alignItems: "flex-start", justifyContent: "flex-start", borderRadius: "10px 0px 0px 10px", position: "relative", left: "-12px"}}>
+            <span style={{color: "white", fontWeight: "bold", margin: "5px", marginTop: "10px", marginLeft: "16px", display: "inline-block", fontSize: "22px", fontFamily: "Arial Black", position: "absolute"}}>{element}</span>
+            </div>
+            <div style={{display: "flex", alignItems: "flex-end"}}>
+              {time.map((elements)=>{
+                return <a className='timerr' style={{width: "82px"}}>{elements}</a>
+              })}
           </div>
         </div>
+          })}
       </div>
     </Layout>
   );

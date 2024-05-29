@@ -54,6 +54,8 @@
     flex-direction: column;
     position: relative;
     left: 30px;
+    /* display: flex;
+    justify-content: center; */
 }
 
 .newButt:hover{

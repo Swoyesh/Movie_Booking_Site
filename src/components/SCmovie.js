@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import "../nncMovie.css"
 
 const SCmovie = (props) => {
-    const [display1, setDisplay1] = useState(-140)
+    const [display1, setDisplay1] = useState(-150)
     const[zoom, setZoom] = useState("1")
     const s11 = {
         color: "white", 
