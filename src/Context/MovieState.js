@@ -10,7 +10,7 @@ const MovieState = (props) => {
   const [dis1, setDis1] = useState("")
   const [dis2, setDis2] = useState("none")
   const [day, setDay] = useState("today")
-  const [activeTab, setActiveTab] = useState("HOME")
+  const [activeTab, setActiveTab] = useState(null)
 
   const userFunc = async () => {
     const response = await fetch(`${host}/api/auth/getuser`, {

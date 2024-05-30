@@ -7,7 +7,7 @@ import movieContext from "../Context/movieContext";
 
 const Cmovie = (props) => {
   const context = useContext(movieContext)
-  const {acitveTab, setActiveTab} = context
+  const {acitveTab, setActiveTab, day, setDay} = context
   const [display1, setDisplay1] = useState(-140);
   const [zoom, setZoom] = useState("1");
   const { type } = props;
@@ -51,7 +51,7 @@ const Cmovie = (props) => {
   let s1 = {
     translate: display1,
   };
-  let s2 = {
+  let s2 = { 
     scale: zoom,
   };
 
@@ -86,6 +86,8 @@ const leaverr = ()=>{
 const newer = ()=>{
   setActiveTab("")
 }
+
+
 
 
   return (
@@ -164,12 +166,12 @@ const newer = ()=>{
             const authToken = localStorage.getItem("auth-token");
             return (
               <Link
-                to={authToken === null && choose == "1" ? "/login" : ""}
+                to={authToken === null && choose == "1" ? "/login" : "/movieid"}
                 key={element}
               >
                 <button
                   className="btn btn-primary"
-                  style={hours < parseInt(element[0])? st1 : (hours == parseInt(element[0]) && min <= parseInt(element[1]) ? st1 : st2)}
+                  style={hours < parseInt(element[0]) || day === "tomm" ? st1 : (hours == parseInt(element[0]) && min <= parseInt(element[1]) ? st1 : st2)}
                   onMouseMove={() => chooser(element)}
                   onMouseLeave={constant}
                 >

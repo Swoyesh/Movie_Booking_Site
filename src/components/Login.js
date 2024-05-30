@@ -4,16 +4,23 @@ import nns from "../nns.jpg";
 import Footer from "./Footer";
 import "../lg.css";
 // eslint-disable-next-line
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import movieContext from "../Context/movieContext";
+import Layout from "./Layout"
 
 const Login = () => {
+  let location = useLocation()
   let context = useContext(movieContext);
-  let { userFunc, user } = context;
+  let { userFunc, user, activeTab, setActiveTab } = context;
 
   let inputRefs = useRef([]);
-
+  useEffect(() => {
+    if(location.pathname !== '/'){
+      setActiveTab(null)
+    }
+  }, [])
+  
   const navigate = useNavigate();
   const host = "http://localhost:5000";
   const [credentials1, setCredentials1] = useState({
@@ -167,6 +174,7 @@ const Login = () => {
 
   return (
     <>
+    {/* <Layout> */}
       <div
         className="container"
         style={{
@@ -370,6 +378,7 @@ const Login = () => {
       <div className="bottom" style={{ top: "21vh" }}>
         <Footer />
       </div>
+      {/* </Layout> */}
     </>
   );
 };
