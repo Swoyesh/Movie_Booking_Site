@@ -16,3 +16,110 @@
     margin-right: 8px;
 }
 
+.screen{
+    background: url('https://bigmovies.com.np/Templates/BigMovies/images/px_by_Gre3g.png');
+    text-transform: uppercase;
+    height: 27px;
+    line-height: 27px;
+    font-size: 14px;
+    letter-spacing: 10px;
+    color: #fff;
+    text-align: center;
+    width: 70%;
+    margin: 10px auto 10px;
+    border-radius: 0 0 40px 40px;
+}
+
+.all_seats{
+    display: block;
+    overflow: auto;
+    padding: 20px;
+}
+
+.total_process{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 12px 0;
+    position: sticky;
+    bottom: 0;
+    border-top: 1px solid #28346c;
+    flex-direction: column;
+}
+
+.inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.amount{
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.inner_amount{
+    margin-bottom: 0 !important;
+    margin-right: 15px !important;
+    font-size: 20px !important;
+    margin: 0 0 16px;
+    padding: 0;
+    color: white;
+}
+
+.inner_amount > h2{
+    font-size: 16px;
+    margin: 0px;
+    float: left;
+    font-weight: 600;
+}
+
+.proceed{
+    margin: 0px -8px;
+}
+
+.inner_proceed, .proceeder{
+    margin-left: 12px !important;
+    display: block;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.proceed > *{
+    margin: 3px 5px;
+    padding: 0 14px;
+}
+
+.floater{
+    background-color: #44b35e;
+    border: 1px solid #44b35e;
+    float: left !important;
+    text-decoration: none;
+    height: 40px;
+    line-height: 38px;
+    padding: 0 15px;
+    
+}
+
+.floater:hover{
+    background-color: #348e37;
+    border: 1px solid #348e37;
+    animation: newer 0.3s ease;
+}
+
+@keyframes newer{
+    0%{
+        background-color: #44b35e;
+        border: 1px solid #44b35e;
+    }
+    100%{
+        background-color: #348e37;
+        border: 1px solid #348e37;
+    }
+}
