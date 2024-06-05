@@ -108,7 +108,7 @@ const newer = ()=>{
             textAlign: "right",
             right: "10px",
           }}
-        > <Link to={props.title} style={nice}>
+        > <Link to="/buy" style={nice}>
           <button className="b1" style={s1} onMouseMove={mover} onMouseLeave={leaverr} onClick={newer}>
            <i class="fa-regular fa-ticket" style={{ margin: "8px"}}></i>Buy
             Tickets
