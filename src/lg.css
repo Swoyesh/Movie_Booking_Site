@@ -1,0 +1,129 @@
+.spans{
+    color: rgba(255, 255, 255, 0.6);
+    margin: 5px;
+    position: relative;
+    top: 4vh;
+    left: 1vw;
+    font-weight: bolder;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.spans:hover{
+    color: white;
+    padding: 10px;
+}
+
+.a-spans{
+    color: rgba(255, 255, 255, 1);
+    margin: 5px;
+    position: relative;
+    top: 4vh;
+    left: 1.3vw;
+    font-weight: bolder;
+    font-size: 25px;
+    cursor: pointer;
+    border-bottom: 3px solid #db322b;
+    padding: 10px;
+    color: white;
+}
+
+.ipt1{
+    position: relative;
+    left: 1.5vw;
+    top: 3.5vh;
+    color: black;
+    padding: 7px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: none;
+    width: 47%;
+}
+
+.ipt2{
+    display: block;
+    position: relative;
+    left: 1.5vw;
+    top: 6.5vh;
+    color: black;
+    padding: 7px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: none;
+    width: 47%;
+}
+
+.ipt1:focus{
+    border: none;
+    outline: none;
+}
+
+.ipt2:focus{
+    border: none;
+    outline: none;
+}
+
+.btttn{
+    position: relative;
+    top: 9vh;
+    left: 1.5vw;
+    color: white;
+    background-color: #db322b;
+    border: none;
+    padding: 5px 12px 5px 12px;
+    border-radius: 5px;
+}
+
+.btttn:hover{
+    background-color: rgba(255, 0, 0, 0.6);
+}
+
+.g-inp{
+    position: relative;
+    top:14.5vh;
+    left: -5.5vw;
+    border: none;
+    height: 15vh;
+    width: 26vw;
+}
+
+.h-ipt{
+    display: block;
+    position: relative;
+    left: 1.5vw;
+    top:3vh;
+    color: black;
+    padding: 7px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: none;
+    width: 47%;
+}
+
+.h-btttn{
+    position: relative;
+    top: 21vh;
+    left: 1.5vw;
+    color: white;
+    background-color: #42c956;
+    border: none;
+    padding: 5px 12px 5px 12px;
+    border-radius: 5px;
+}
+
+.h-btttn:hover{
+    background-color: green;
+}
+
+.h-ipt:focus{
+    border: none;
+    outline: none;
+}
+

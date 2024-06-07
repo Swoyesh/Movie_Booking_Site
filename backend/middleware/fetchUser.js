@@ -3,6 +3,7 @@ const JWT_secret = "firsttry"
 
 const fetchUser = (req, res, next)=>{
     const token = req.header("auth-token")
+    const decoded = jwt.decode(token, {complete: true})
     if(!token){
         return res.status(401).send({ error: "Please authenticate using a valid token." });
     }

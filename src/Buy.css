@@ -1,0 +1,181 @@
+.ancs > .container {
+    background-color: #182356;
+    position: relative;
+    margin-bottom: 55px;
+    top: -65px;
+  }
+  
+  .firsts {
+    background-image: linear-gradient(rgba(24, 35, 86, 1), rgba(0, 11, 75, 0));
+    position: relative;
+    height: 450px; /* Ensure height is sufficient to see the gradient */
+    z-index: 1;
+  }
+  
+  .lasts {
+    background-image: linear-gradient(rgba(0, 11, 75, 0), rgba(24, 35, 86, 1));
+    height: 100px;
+    position: relative;
+    top: 33.1vh;
+    z-index: 2;
+  }
+  
+  img {
+    display: block; /* Remove any default margin */
+  }
+  
+  ul{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+    text-align: justify;
+  }
+
+  .justified-list {
+    text-align: justify;
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  
+  .justified-list::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+  body{
+    font-family: "Poppins", sans-serif,"Segoe UI","Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+  }
+
+  .justified-list {
+  text-align: justify;
+  width: 100%;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.justified-list .item {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px; /* Adjust spacing as needed */
+}
+
+.niceee{
+  position: relative;
+  left: 8px;
+  color: gray;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.nicee1{
+  position: relative;
+  left: 25px;
+  color: gray;
+  font-size: 12px;
+  font-weight: bold;
+}
+.nicee2{
+  position: relative;
+  left: 45px;
+  color: gray;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.redr{
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.yellowy{
+  position: relative;
+  left: 20px;
+  color: goldenrod;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.greeng{
+  position: relative;
+  left: 40px;
+  color: green;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.dices{
+  top: 10px;
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 10px 12px 10px 12px;
+  border-bottom: 1px solid rgba(235, 235, 235, 0.3);
+  margin: 8px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(227, 227, 227, 0.1));
+  height: 40px;
+}
+
+.dices:hover{
+  padding: 10px 12px 10px 12px;
+  margin: 8px;
+  cursor: pointer;
+  height: 40px;
+}
+
+.actors{
+  margin: 8px;
+  color: red;
+  text-decoration: none;
+  border-bottom: 1px solid red;
+  padding: 10px 12px 10px 12px;
+  cursor: pointer;
+  position: relative;
+  top: 10px;
+  background-image: linear-gradient(to bottom, rgba(255, 40, 40, 0.0), rgba(255, 40, 40, 0.2));
+  height: 40px;
+}
+
+.ances> .container{
+  background-color: #182356;
+}
+
+.timerr{
+  border: 2px solid #4caf50;
+  padding: 20px;
+  margin: 10px;
+  text-decoration: none;
+  color: #4caf50;
+  text-align: center;
+  display: inline-block;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.timerr:hover{
+  background-color: #4caf50;
+  color: white;
+  animation: changer 0.5s ease;
+}
+
+@keyframes changer{
+  0%{
+    background-color: transparent;
+    color: #4caf50
+  }
+  100%{
+    background-color: #4caf50;
+    color: white;
+  }
+
+}

@@ -164,7 +164,6 @@ const Moviecollec = () => {
             img={element.img}
             type={element.rating}
             time = {element.time}
-            hello = "hi"
           />
         ))}
         <div className='noice' style={{ margin: "0px", display: "flex", justifyContent: "center", alignItems: "center" }}>

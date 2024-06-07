@@ -5,7 +5,8 @@
 
 .dates{
     position: relative;
-    left: 50px;
+    left: 5vw;
+    overflow: hidden;
 }
 
 .dice{
@@ -21,6 +22,8 @@
 }
 
 .dice:hover{
+    padding: 10px 12px 10px 12px;
+    margin: 8px;
     cursor: pointer;
 }
 

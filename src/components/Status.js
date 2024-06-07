@@ -6,7 +6,7 @@ const Status = () => {
     <div className='container'>
         <div>
         <button className='red'></button>
-        <span className='nice'>SOLD</span>
+        <span className='nicee'>SOLD</span>
         </div>
         <div>
         <button className='yellow'></button>

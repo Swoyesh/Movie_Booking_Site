@@ -1,0 +1,170 @@
+.foot{
+    background-color: #091138;
+    height: 60vh;
+}
+
+.lg{
+    position: relative;
+    top: 9vh;
+    height: 52px;
+    width: 130px;
+}
+
+.fa-facebook{
+    position: relative;
+    color: white;
+    font-size: 20px;
+    top: -4.5vh;
+    margin: 0.5vw;
+}
+.fa-facebook:hover{
+    position: relative;
+    color: red;
+    font-size: 20px;
+    top: -4.5vh;
+    margin: 0.5vw;
+}
+
+.fa-instagram{
+    position: relative;
+    color: white;
+    font-size: 22px;
+    top: -4.5vh;
+    margin: 0.5vw;
+}
+.fa-instagram:hover{
+    position: relative;
+    color: red;
+    font-size: 22px;
+    top: -4.5vh;
+    margin: 0.5vw;
+}
+
+.fa-square-twitter{
+    position: relative;
+    color: white;
+    font-size: 22px;
+    top: -4.5vh;
+    margin: 0.5vw;
+}
+.fa-square-twitter:hover{
+    position: relative;
+    color: red;
+    font-size: 22px;
+    top: -4.5vh;
+    margin: 0.5vw;
+}
+
+.fa-whatsapp{
+    position: relative;
+    color: white;
+    font-size: 22px;
+    top: -4.5vh;
+    margin: 0.5vw;
+    }
+.fa-whatsapp:hover{
+    position: relative;
+    color: red;
+    font-size: 22px;
+    top: -4.5vh;
+    margin: 0.5vw;
+}
+
+.now{
+    position: relative;
+    top: 9vh;
+    left: 13vw;
+    color: #adb5bd;
+    font-size: 15px;
+}
+
+.list{
+    text-decoration: none;
+    display: block;
+    color: white;
+    position: relative;
+    top: 14vh;
+    left: 4vw;
+    font-size: medium;
+    margin-bottom: 3px;
+}
+
+.list:hover{
+    color: red;
+}
+
+.wow{
+    position: relative;
+    top: 9vh;
+    color: #adb5bd;
+    left: 22.5vw;
+}
+
+.imgg1{
+    position: relative;
+    width: 6.5vw;
+    height: 7vh;
+    margin: 5px;
+    background-color: white;
+    border-radius: 3px;
+    padding: 12px;
+    display: inline;
+}
+.imgg2{
+    position: relative;
+    width: 6.5vw;
+    height: 7vh;
+    margin: 5px;
+    background-color: white;
+    border-radius: 3px;
+    padding: 7px;
+    display: inline;
+}
+.imgg3{
+    position: relative;
+    width: 6.5vw;
+    height: 7vh;
+    margin: 5px;
+    background-color: white;
+    border-radius: 3px;
+    padding: 14px;
+    display: inline;
+}
+
+.imgg1:hover{
+    cursor: pointer;
+}
+.imgg2:hover{
+    cursor: pointer;
+}
+.imgg3:hover{
+    cursor: pointer;
+}
+
+.conter{
+    top: 14vh;
+    width: 16vw;
+    position: relative;
+    left: 10vw;
+}
+
+.para{
+    color: white;
+    position: relative;
+    width: 20vw;
+    left: 72vw;
+    top: -23vh;
+}
+
+.poo{
+    font-size: small;
+    color: #adb5bd;
+    position: relative;
+    top: -9vh;
+    height: 0px;
+}
+
+.spp{
+    color: red;
+    cursor: pointer;
+}

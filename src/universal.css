@@ -1,13 +1,18 @@
+.topper{
+    position: relative;
+    top: -12vh;
+}
+
 .mnav{
     position: relative;
-    top: 270px;
+    top: 200px;
 }
 
 .stat{
     position: relative;
-    top: 285px;
+    top: 215px;
 }
 .mcollec{
     position: relative;
-    top: 300px;
+    top: 230px;
 }

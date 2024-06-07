@@ -1,7 +1,6 @@
 .first{
     background-image: linear-gradient(rgba(0, 11, 75, 1), rgba(0, 11, 75, 0));
     position: relative;
-    top:-80px;
     height: 100px;
     z-index: 2;
 }
@@ -10,6 +9,6 @@
     background-image: linear-gradient(rgba(0, 11, 75, 0), rgba(0, 11, 75, 1));
     height: 100px;
     position: relative;
-    bottom: -142px;
+    top: 33.1vh;
     z-index: 2;
 }
