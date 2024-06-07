@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Cmovie from './Cmovie';
 import "../MC.css";
 import movieContext from '../Context/movieContext';
+import { Link } from "react-router-dom";
 
 const Moviecollec = () => {
   let context = useContext(movieContext);
@@ -56,7 +57,7 @@ const Moviecollec = () => {
     }
   }, [day, mov, nmov]);
   useEffect(() => {
-    fetch('https://path-to-movie-api')
+    fetch('http://localhost:5000/api/movies/getmovies')
       .then(response => response.json())
       .then(data => setMovies(data));
   }, []);
