@@ -9,6 +9,7 @@ import Career from './components/Career';
 import Ticker from './components/Ticker';
 import Buy from './components/Buy';
 import MovieID from './components/MovieID';
+import MovieCollection from './components/MovieCollection';
 import Navbar from './components/Navbar';
 import './App.css';
 
@@ -25,7 +26,11 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/career" element={<Career />} />
           <Route path="/rate" element={<Ticker />} />
-          <Route path="/buy" element={<Buy />} />
+          <Route exact path="/" component={MovieCollection} />
+        <Route 
+          path="/buy/:id" 
+          render={(props) => <Buy {...props.location.state} />} 
+        />
           <Route path="/movieid" element={<MovieID />} />
         </Routes>
       </BrowserRouter>

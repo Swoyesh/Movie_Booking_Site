@@ -56,11 +56,7 @@ const Moviecollec = () => {
       setDecider(mov);
     }
   }, [day, mov, nmov]);
-  useEffect(() => {
-    fetch('http://localhost:5000/api/movies/getmovies')
-      .then(response => response.json())
-      .then(data => setMovies(data));
-  }, []);
+  
 
   useEffect(() => {
     let total = decider.length;
@@ -172,19 +168,6 @@ const Moviecollec = () => {
             time = {element.time}
           />
         ))}
-         <div>
-      {movies.map(movie => (
-        <div key={movie.id}>
-          <h2>{movie.title}</h2>
-          <Link to={{
-            pathname: `/buy/${movie.id}`,
-            state: { movie }
-          }}>
-            Buy
-          </Link>
-        </div>
-      ))}
-    </div>
         <div className='noice' style={{ margin: "0px", display: "flex", justifyContent: "center", alignItems: "center" }}>
           <button className='goody' style={ss2} onClick={next}><strong><span style={{ textAlign: "center", fontSize: "25px" }}>{sign2}</span></strong></button>
         </div>
