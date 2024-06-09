@@ -53,6 +53,7 @@
     0%{
         color: white;
         text-decoration: none;
+        border-bottom: 1px solid rgba(235, 235, 235, 0.3);
     }
     100%{
         text-decoration: none;
