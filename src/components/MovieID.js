@@ -14,7 +14,7 @@ const MovieID = () => {
             margin: "15px 0px 0px 20px",
             display: "flex",
             justifyContent: "space-between",
-            width: "95%",
+            width: "96%",
           }}
         >
           <div>
