@@ -123,7 +123,7 @@ const Forgo = () => {
                     src={rell}
                     style={{
                       height: "5vh",
-                      top: "0.5vh",
+                      top: "2.5vh",
                       position: "relative",
                       left: "-185px",
                       backgroundColor: "yellow",

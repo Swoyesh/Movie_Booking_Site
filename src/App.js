@@ -26,10 +26,15 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/career" element={<Career />} />
           <Route path="/rate" element={<Ticker />} />
+<<<<<<< HEAD
           <Route exact path="/" component={MovieCollection} />
         <Route 
           path="/buy/:id" 
           render={(props) => <Buy {...props.location.state} />} 
+=======
+          <Route 
+          path="/buy" element={<Buy/>}
+>>>>>>> cf074d465b8de93a032ab0e7cadad5128202eb00
         />
           <Route path="/movieid" element={<MovieID />} />
         </Routes>
