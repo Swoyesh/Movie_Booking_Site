@@ -170,7 +170,7 @@ const newer = ()=>{
                 key={element}
               >
                 <button
-                  className="btn btn-primary"
+                  className="btn-primary"
                   style={hours < parseInt(element[0]) || day === "tomm" ? st1 : (hours == parseInt(element[0]) && min <= parseInt(element[1]) ? st1 : st2)}
                   onMouseMove={() => chooser(element)}
                   onMouseLeave={constant}
