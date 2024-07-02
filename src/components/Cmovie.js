@@ -1,23 +1,41 @@
-//individual movies
-
-import React, { useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 import "../cMovie.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import movieContext from "../Context/movieContext";
 
 const Cmovie = (props) => {
-  const context = useContext(movieContext)
-  const {acitveTab, setActiveTab, day, setDay} = context
+  const context = useContext(movieContext);
+  const { acitveTab, setActiveTab, day, setDay } = context;
   const [display1, setDisplay1] = useState(-140);
   const [zoom, setZoom] = useState("1");
   const { type } = props;
-  let hello = []
-  
-  props.time.forEach(element => {
-    hello.push(element.split(":"))
+  let hello = [];
+  const navigate = useNavigate();
+
+  const handleBuyTickets = () => {
+    setActiveTab("");
+    navigate(`/buy/${props.title}/${props.id}`, {
+      state: {
+        movieId: props.id,
+        title: props.title,
+        duration: props.duration,
+        genre: props.genre,
+        v_img: props.v_img,
+        h_img: props.h_img,
+        type: props.type,
+        time: props.time,
+        cast: props.cast,
+        release: props.release,
+        director: props.director,
+        synopsis: props.synopsis
+      },
+    });
+  };
+  props.time.forEach((element) => {
+    hello.push(element.split(":"));
   });
 
-  console.log(hello)
+  console.log(hello);
   const st1 = {
     fontSize: "12.5px",
     width: "60px",
@@ -25,7 +43,7 @@ const Cmovie = (props) => {
   const date = new Date();
   const hours = date.getHours();
   const min = date.getMinutes();
-  console.log(date.getTime())
+  console.log(date.getTime());
   const st2 = {
     fontSize: "12.5px",
     width: "60px",
@@ -51,7 +69,7 @@ const Cmovie = (props) => {
   let s1 = {
     translate: display1,
   };
-  let s2 = { 
+  let s2 = {
     scale: zoom,
   };
 
@@ -66,29 +84,24 @@ const Cmovie = (props) => {
   };
 
   const fs1 = {
-    textDecoration: "none", 
-    color: "red"
-  }
+    textDecoration: "none",
+    color: "red",
+  };
   const fs2 = {
-    textDecoration: "none", 
-    color: "white"
-  }
-const [nice, setNice] = useState(fs1)
+    textDecoration: "none",
+    color: "white",
+  };
+  const [nice, setNice] = useState(fs1);
 
-const mover = ()=>{
-  setNice(fs2)
-}
+  const mover = () => {
+    setNice(fs2);
+  };
 
-const leaverr = ()=>{
-  setNice(fs1)
-}
+  const leaverr = () => {
+    setNice(fs1);
+  };
 
-const newer = ()=>{
-  setActiveTab("")
-}
-
-
-
+  console.log(props.img);
 
   return (
     <>
@@ -108,12 +121,17 @@ const newer = ()=>{
             textAlign: "right",
             right: "10px",
           }}
-        > <Link to="/buy" style={nice}>
-          <button className="b1" style={s1} onMouseMove={mover} onMouseLeave={leaverr} onClick={newer}>
-           <i class="fa-regular fa-ticket" style={{ margin: "8px"}}></i>Buy
+        >
+          <button
+            className="b1"
+            style={s1}
+            onMouseMove={mover}
+            onMouseLeave={leaverr}
+            onClick={handleBuyTickets}
+          >
+            <i class="fa-regular fa-ticket" style={{ margin: "8px" }}></i>Buy
             Tickets
           </button>
-          </Link>
           <button className="b2" style={s1}>
             <i class="fa-thin fa-play" style={{ margin: "8px" }}></i>Play
             Trailer
@@ -128,7 +146,7 @@ const newer = ()=>{
             onMouseOut={clicked2}
           >
             <img
-              src={props.img}
+              src={props.v_img}
               className="card-img-top"
               alt="..."
               height={"380px"}
@@ -170,8 +188,15 @@ const newer = ()=>{
                 key={element}
               >
                 <button
-                  className="btn-primary"
-                  style={hours < parseInt(element[0]) || day === "tomm" ? st1 : (hours == parseInt(element[0]) && min <= parseInt(element[1]) ? st1 : st2)}
+                  className="btn btn-primary"
+                  style={
+                    hours < parseInt(element[0]) || day === "tomm"
+                      ? st1
+                      : hours == parseInt(element[0]) &&
+                        min <= parseInt(element[1])
+                      ? st1
+                      : st2
+                  }
                   onMouseMove={() => chooser(element)}
                   onMouseLeave={constant}
                 >

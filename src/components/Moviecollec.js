@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Cmovie from './Cmovie';
 import "../MC.css";
 import movieContext from '../Context/movieContext';
+import { Link } from "react-router-dom";
 
 const Moviecollec = () => {
   let context = useContext(movieContext);
@@ -55,6 +56,7 @@ const Moviecollec = () => {
       setDecider(mov);
     }
   }, [day, mov, nmov]);
+  
 
   useEffect(() => {
     let total = decider.length;
@@ -158,12 +160,18 @@ const Moviecollec = () => {
         {movies.map((element, index) => (
           <Cmovie
             key={index}
+            id={element._id}
             title={element.name}
             duration={element.duration}
             genre={element.genre}
-            img={element.img}
+            v_img={element.v_img}
+            h_img={element.h_img}
             type={element.rating}
             time = {element.time}
+            cast = {element.cast}
+            release = {element.release}
+            director = {element.director}
+            synopsis = {element.synopsis}
           />
         ))}
         <div className='noice' style={{ margin: "0px", display: "flex", justifyContent: "center", alignItems: "center" }}>

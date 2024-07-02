@@ -1,14 +1,42 @@
-import React, { useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useContext, useEffect } from 'react'
+import { Link, useLocation, useNavigate} from 'react-router-dom';
 import Layout from "./Layout";
 import "../Buy.css";
 import movieContext from '../Context/movieContext'
 
 const Buy = () => {
+  const location = useLocation();
+  const navigate = useNavigate
+
+  // Retrieve the state from location or localStorage
+  const movieDetails = location.state || JSON.parse(localStorage.getItem('movieDetails'));
+
+  useEffect(() => {
+    if (location.state) {
+      // Save the state to localStorage when the component mounts
+      localStorage.setItem('movieDetails', JSON.stringify(location.state));
+    }
+  }, [location.state]);
+
+
+  const {
+    movieId,
+    title,
+    duration,
+    genre,
+    v_img,
+    h_img,
+    type,
+    time,
+    cast,
+    release,
+    director,
+    synopsis
+  } = movieDetails;
+  // console.log(movieId)
   const context = useContext(movieContext)
-  const audis = ["Adui 1", "Audi 2", "Audi 3"]
-  const time = ['10:00 AM', "14:00 PM"]
-  const { setDay } = context
+  const {b_dis2, setB_dis2, setDay, b_dis1, setB_dis1} = context;
+  const audis = ["Audi 1"]
   const d = new Date();
   const ld = new Date(d.getFullYear(), d.getMonth()+1, 0)
   const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -47,16 +75,24 @@ const Buy = () => {
         fontSize: "30px"
     }
     let clicked11 = (state)=>{
+      setB_dis1("")
+      setB_dis2("none")
       setActiveTab(state)
       setDay("today")
     }
     let clicked12 = (state)=>{
+      setB_dis1("")
+      setB_dis2("none")
       setActiveTab(state)
       setDay("tomm")
     }
     let clicked2 = (state)=>{
       setActiveTab(state)
+      setB_dis1("none")
+      setB_dis2("")
     }
+
+
   return (
     <Layout>
       <div className="ancs">
@@ -70,7 +106,7 @@ const Buy = () => {
               style={{ width: "100%", position: "relative" }}
             >
               <img
-                src="https://variety.com/wp-content/uploads/2023/08/ONEPIECE_Unit_10613RC.jpg"
+                src={h_img}
                 alt="One Piece"
                 style={{
                   width: "100%",
@@ -95,9 +131,9 @@ const Buy = () => {
               top: "-95px",
             }}
           >
-            <div style={{ position: "relative", zIndex: "3" }}>
+            <div style={{ position: "relative", zIndex: "3" , display: "flex", flexDirection: "column"}}>
               <img
-                src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQfOO_2CUNrBbD6ZqpzaczOc69ZiUc9lmGb-HDMYOCCamtFesr2mt66xYkOa7gj7rML3zHArPoJiRdm1uUX6qGQF6wDhw56bjCzWRrAPf4rOtoVXKzcTXNuph6N5IuG4iP035pbohFGrTQyhtKXDEL30d.jpg?r=409"
+                src={v_img}
                 height="340px"
                 width="275px"
                 style={{ borderRadius: "10px" }}
@@ -120,7 +156,7 @@ const Buy = () => {
                     lineHeight: "1.2",
                   }}
                 >
-                  One Piece
+                  {title}
                 </h1>
                 <div style={{ display: "flex", position: "relative", top: "-10px"}}>
                   <hr
@@ -135,20 +171,23 @@ const Buy = () => {
                       lineHeight: "1.5",
                     }}
                   >
-                    Action, Adventure
+                    {genre}
                   </h4>
                 </div>
+                <div style={{position: "relative", height: "100%", display: "flex"}}>
                 <p
-                  className="movie-info 2my"
+                  className="movie-info "
                   style={{
                     fontSize: "15px",
                     fontWeight: "300",
                     lineHeight: "3", /* Adjusted line height */
+                    position: "relative",
                   }}
                 >
-                  The greatest story of all time!!
+                  {synopsis}
                 </p>
-                <div className="justified-list" style={{ lineHeight: "1.5" , display: "flex", width: "100%", flexDirection: "row"}}>
+                </div>
+                <div className="justified-list" style={{ lineHeight: "1.5" , display: "flex", width: "100%", flexDirection: "row", position: "relative"}}>
                   <div style={{position: 'absolute', flex: "1"}}>
                   <div className="item">
                     <span style={{ color: "#db322b" }}>Director : &nbsp;</span>{" "}
@@ -165,22 +204,22 @@ const Buy = () => {
                     {/* June 5, 2024 */}
                   </div>
                   <div className="item">
-                    <span style={{ color: "#db322b" }}>Director : &nbsp;</span>{" "}
+                    <span style={{ color: "#db322b" }}>Duration : &nbsp;</span>{" "}
                     {/* Infinity */}
                   </div>
                   </div>
                   <div style={{ position: "absolute", width: "100%", left: "120px"}}>
                   <div className="item">
-                    Eiichiro Oda
+                    {director}
                   </div>
                   <div className="item">
-                    Luffy, Zoro, Nami
+                    {cast}
                   </div>
                   <div className="item">
-                    June 5, 2024
+                    {release}
                   </div>
                   <div className="item">
-                    Infinity
+                    {duration}
                   </div>
                   </div>
                 </div>
@@ -224,7 +263,7 @@ const Buy = () => {
           </div>
         </div>
       </div>
-      <div className='ances' style={{margin: "20px", marginBottom: "60px"}}>
+      <div className='ances' style={{margin: "20px", marginBottom: "60px", display: b_dis1}}>
         
           {audis.map((element)=>{
             return <div className='container' style={{height: "110px", borderRadius: "10px", width: "90%", marginBottom: "20px", display: "flex", flexDirection: "row"}}>
@@ -233,11 +272,16 @@ const Buy = () => {
             </div>
             <div style={{display: "flex", alignItems: "flex-end"}}>
               {time.map((elements)=>{
-                return <a className='timerr' style={{width: "82px"}}>{elements}</a>
+                return <Link to={localStorage.getItem("auth-token") === null? '/login': "/movieid"}><a className='timerr' style={{width: "82px"}}>{elements}</a></Link>
               })}
           </div>
         </div>
           })}
+      </div>
+      <div className='container' style={{ height: "116px", backgroundColor: "#182356", borderRadius: "12px", alignItems: "center", justifyContent: "center", fontWeight: "bolder", fontSize: "18px", display: b_dis2, marginTop: "20px", marginBottom: "60px"}}>
+        <div style={{ color: "#5aafe2", padding: "0px 20px" }}>
+          No Shows Available
+        </div>
       </div>
     </Layout>
   );

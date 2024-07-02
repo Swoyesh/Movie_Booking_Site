@@ -8,7 +8,9 @@ const MovieState = (props) => {
   const header2 = useState("BOOKING"); // Extracting the state value
   const [user, setUser] = useState("");
   const [dis1, setDis1] = useState("")
+  const [b_dis1, setB_dis1] = useState("")
   const [dis2, setDis2] = useState("none")
+  const [b_dis2, setB_dis2] = useState("none")
   const [day, setDay] = useState("today")
   const [activeTab, setActiveTab] = useState(null)
 
@@ -37,7 +39,7 @@ const MovieState = (props) => {
     // console.log(mov)
   };
   return (
-    <movieContext.Provider value={{ header1, header2, userFunc, user, getMovies, dis1, setDis1, dis2, setDis2, day, setDay, activeTab, setActiveTab}}>
+    <movieContext.Provider value={{ header1, header2, userFunc, user, getMovies, dis1, setDis1, b_dis1, setB_dis1, dis2, setDis2, b_dis2, setB_dis2, day, setDay, activeTab, setActiveTab}}>
       {props.children}
     </movieContext.Provider>
   );
