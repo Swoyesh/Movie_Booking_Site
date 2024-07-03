@@ -3,10 +3,11 @@ import { Link, useLocation, useNavigate} from 'react-router-dom';
 import Layout from "./Layout";
 import "../Buy.css";
 import movieContext from '../Context/movieContext'
+import MovieID from './MovieID';
 
 const Buy = () => {
   const location = useLocation();
-  const navigate = useNavigate
+  const navigate = useNavigate();
 
   // Retrieve the state from location or localStorage
   const movieDetails = location.state || JSON.parse(localStorage.getItem('movieDetails'));
@@ -31,7 +32,8 @@ const Buy = () => {
     cast,
     release,
     director,
-    synopsis
+    synopsis,
+    days
   } = movieDetails;
   // console.log(movieId)
   const context = useContext(movieContext)
@@ -92,6 +94,13 @@ const Buy = () => {
       setB_dis2("")
     }
 
+    const buyer = ()=>{
+      if (localStorage.getItem("auth-token") === null) {
+        navigate('/login');
+      } else {
+        navigate(`/movieid/${title}/${movieId}`, { state: { title: title, days: days } });
+      }
+    }
 
   return (
     <Layout>
@@ -272,7 +281,7 @@ const Buy = () => {
             </div>
             <div style={{display: "flex", alignItems: "flex-end"}}>
               {time.map((elements)=>{
-                return <Link to={localStorage.getItem("auth-token") === null? '/login': "/movieid"}><a className='timerr' style={{width: "82px"}}>{elements}</a></Link>
+                return <a className='timerr' style={{width: "82px"}} onClick={buyer}>{elements}</a>
               })}
           </div>
         </div>

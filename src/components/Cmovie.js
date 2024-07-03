@@ -27,15 +27,14 @@ const Cmovie = (props) => {
         cast: props.cast,
         release: props.release,
         director: props.director,
-        synopsis: props.synopsis
+        synopsis: props.synopsis,
+        days: props.days
       },
     });
   };
   props.time.forEach((element) => {
     hello.push(element.split(":"));
   });
-
-  console.log(hello);
   const st1 = {
     fontSize: "12.5px",
     width: "60px",
@@ -43,7 +42,6 @@ const Cmovie = (props) => {
   const date = new Date();
   const hours = date.getHours();
   const min = date.getMinutes();
-  console.log(date.getTime());
   const st2 = {
     fontSize: "12.5px",
     width: "60px",
@@ -54,7 +52,6 @@ const Cmovie = (props) => {
     border: "1px solid gray",
     backgroundColor: "#182356",
   };
-
   const [choose, setChoose] = useState("1");
   const clicked1 = () => {
     setZoom("1.1");
@@ -100,8 +97,6 @@ const Cmovie = (props) => {
   const leaverr = () => {
     setNice(fs1);
   };
-
-  console.log(props.img);
 
   return (
     <>
@@ -188,7 +183,7 @@ const Cmovie = (props) => {
                 key={element}
               >
                 <button
-                  className="btn btn-primary"
+                  className="btn-primary"
                   style={
                     hours < parseInt(element[0]) || day === "tomm"
                       ? st1

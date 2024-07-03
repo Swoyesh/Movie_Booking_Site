@@ -27,19 +27,17 @@ const App = () => {
           <Route path="/career" element={<Career />} />
           <Route path="/rate" element={<Ticker />} />
           {/* <Route exact path="/" component={MovieCollection} /> */}
-        <Route 
-          path="/buy/:name/:id" 
-         element={<Buy/>}/>
-          <Route path="/movieid" element={<MovieID />} />
+          <Route path="/buy/:name/:id" element={<Buy />} />
+          <Route path="/movieid/:name/:id" element={<MovieID />} />
         </Routes>
       </BrowserRouter>
     </MovieState>
   );
-}
+};
 
 const ConditionalNavbar = () => {
   const location = useLocation();
-  const shouldShowNavbar = location.pathname !== "/movieid";
+  const shouldShowNavbar = !location.pathname.startsWith("/movieid");
 
   return shouldShowNavbar ? <Navbar /> : null;
 };

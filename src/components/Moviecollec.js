@@ -172,6 +172,7 @@ const Moviecollec = () => {
             release = {element.release}
             director = {element.director}
             synopsis = {element.synopsis}
+            days = {element.day}
           />
         ))}
         <div className='noice' style={{ margin: "0px", display: "flex", justifyContent: "center", alignItems: "center" }}>

@@ -1,8 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../MovieID.css";
+import movieContext from "../Context/movieContext";
 
 const MovieID = () => {
+  const context = useContext(movieContext)
+  const {day} = context
+  const location = useLocation()
+  const {title, days} = location.state
+  const len = days.length
+  const currentDate = new Date();
+
+// Get the day of the month (1-31)
+const dayss = currentDate.getDate();
+
+// Get the month (0-11)
+const monthIndex = currentDate.getMonth();
+
+// Get the full year (e.g., 2024)
+const year = currentDate.getFullYear();
+
+// Function to get the month name from the month index
+const monthNames = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+const monthName = monthNames[monthIndex];
+
+// Combine the day, month, and year into the desired format
+const formattedDate = `${monthName} ${len === 2 && day === "tomm" ? dayss+1: dayss}, ${year}`;
   const sign1 = ">";
   return (
     <>
@@ -27,7 +53,7 @@ const MovieID = () => {
                 color: "white",
               }}
             >
-              Title
+              {title}
             </h3>
             <span
               style={{
@@ -38,7 +64,7 @@ const MovieID = () => {
                 marginRight: "15px",
               }}
             >
-              Big Movies {sign1} Audi
+              Big Movies {sign1} Audi 1
             </span>
             <span
               style={{
@@ -49,7 +75,7 @@ const MovieID = () => {
                 marginRight: "15px",
               }}
             >
-              date
+             {formattedDate}
             </span>
             <span
               style={{
