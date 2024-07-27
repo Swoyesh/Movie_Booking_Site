@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../cMovie.css";
 import { Link, useNavigate } from "react-router-dom";
 import movieContext from "../Context/movieContext";
@@ -11,6 +11,20 @@ const Cmovie = (props) => {
   const { type } = props;
   let hello = [];
   const navigate = useNavigate();
+
+  const nbuyer = (ele, stl) => {
+    if ((localStorage.getItem("auth-token") === null) & (stl == st1)) {
+      navigate("/login");
+    } else if (stl == st1) {
+      navigate(`/movieid/${props.title}/${props.movieId}`, {
+        state: {
+          title: props.title,
+          days: props.days,
+          time: ele,
+        },
+      });
+    }
+  };
 
   const handleBuyTickets = () => {
     setActiveTab("");
@@ -28,20 +42,20 @@ const Cmovie = (props) => {
         release: props.release,
         director: props.director,
         synopsis: props.synopsis,
-        days: props.days
+        days: props.days,
       },
     });
   };
+
   props.time.forEach((element) => {
     hello.push(element.split(":"));
   });
+
   const st1 = {
     fontSize: "12.5px",
     width: "60px",
   };
-  const date = new Date();
-  const hours = date.getHours();
-  const min = date.getMinutes();
+
   const st2 = {
     fontSize: "12.5px",
     width: "60px",
@@ -51,8 +65,11 @@ const Cmovie = (props) => {
     color: "gray",
     border: "1px solid gray",
     backgroundColor: "#182356",
+    animation: "none",
   };
+
   const [choose, setChoose] = useState("1");
+
   const clicked1 = () => {
     setZoom("1.1");
     setDisplay1(0);
@@ -66,6 +83,7 @@ const Cmovie = (props) => {
   let s1 = {
     translate: display1,
   };
+
   let s2 = {
     scale: zoom,
   };
@@ -84,10 +102,12 @@ const Cmovie = (props) => {
     textDecoration: "none",
     color: "red",
   };
+
   const fs2 = {
     textDecoration: "none",
     color: "white",
   };
+
   const [nice, setNice] = useState(fs1);
 
   const mover = () => {
@@ -98,11 +118,19 @@ const Cmovie = (props) => {
     setNice(fs1);
   };
 
+  const date = new Date();
+  const hours = date.getHours();
+  const min = date.getMinutes();
+
+  useEffect(() => {
+    setDay("today");
+  }, []);
+
   return (
     <>
       <div
         className="card"
-        style={{ width: "25%", margin: "15px", border: "none" }}
+        style={{ width: "22%", margin: "15px", border: "none" }}
       >
         <div
           onMouseMove={clicked1}
@@ -124,11 +152,11 @@ const Cmovie = (props) => {
             onMouseLeave={leaverr}
             onClick={handleBuyTickets}
           >
-            <i class="fa-regular fa-ticket" style={{ margin: "8px" }}></i>Buy
-            Tickets
+            <i className="fa-regular fa-ticket" style={{ margin: "8px" }}></i>
+            Buy Tickets
           </button>
           <button className="b2" style={s1}>
-            <i class="fa-thin fa-play" style={{ margin: "8px" }}></i>Play
+            <i className="fa-thin fa-play" style={{ margin: "8px" }}></i>Play
             Trailer
           </button>
           <button className="buttt">{type}</button>
@@ -150,7 +178,7 @@ const Cmovie = (props) => {
         </div>
         <div
           className="card-body"
-          style={{ backgroundColor: "#182356", width: "100%" }}
+          style={{ backgroundColor: "#182356", width: "110%" }}
         >
           <h5
             className="card-title"
@@ -175,29 +203,22 @@ const Cmovie = (props) => {
           >
             {props.genre}
           </p>
-          {hello.map((element) => {
-            const authToken = localStorage.getItem("auth-token");
+          {hello.map((element, index) => {
+            const isPastTime =
+              hours > parseInt(element[0]) ||
+              (hours === parseInt(element[0]) && min > parseInt(element[1]));
+            const style = !isPastTime || day == "tomm" ? st1 : st2;
             return (
-              <Link
-                to={authToken === null && choose == "1" ? "/login" : "/movieid"}
-                key={element}
+              <button
+                key={index}
+                className="btn-primary"
+                style={style}
+                onClick={() => nbuyer(element, style)}
+                onMouseMove={() => chooser(element)}
+                onMouseLeave={constant}
               >
-                <button
-                  className="btn-primary"
-                  style={
-                    hours < parseInt(element[0]) || day === "tomm"
-                      ? st1
-                      : hours == parseInt(element[0]) &&
-                        min <= parseInt(element[1])
-                      ? st1
-                      : st2
-                  }
-                  onMouseMove={() => chooser(element)}
-                  onMouseLeave={constant}
-                >
-                  {element[0]}:{element[1]}
-                </button>
-              </Link>
+                {element[0]}:{element[1]}
+              </button>
             );
           })}
         </div>

@@ -49,7 +49,7 @@ const Forgo = () => {
 
   return (
     <>
-    {/* <Layout> */}
+      {/* <Layout> */}
       <div
         className="container"
         style={{
@@ -123,7 +123,6 @@ const Forgo = () => {
                     src={rell}
                     style={{
                       height: "5vh",
-                      top: "2.5vh",
                       position: "relative",
                       left: "-185px",
                       backgroundColor: "yellow",
@@ -142,14 +141,14 @@ const Forgo = () => {
                   padding: "7px",
                   width: "90%",
                   backgroundColor: "#fff",
-                  top: "3vh",
+                  top: "7vh",
                   marginLeft: "18px",
                 }}
                 className="iinp"
                 placeholder="Enter Captcha Text"
                 onChange={changer}
               ></input>
-              <div style={{ width: "80%" }}>
+              <div style={{ width: "80%", position: "relative", top: "4vh" , marginBottom: '30px'}}>
                 <button type="button" className="sbtn" onClick={sub}>
                   Submit
                 </button>

@@ -1,5 +1,6 @@
 const express = require('express')
 const connectToMongo = require("./db")
+// const pdfRoute = requrie("./routes/pdf")
 const app = express()
 let cors = require('cors')
 
@@ -19,6 +20,8 @@ app.use("/api/movies", require("./routes/movie"))
 //Route for tickets.
 app.use(express.json())
 app.use("/api/tickets", require("./routes/ticket"))
+
+// app.use(pdfRoute)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

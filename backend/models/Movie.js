@@ -25,7 +25,11 @@ const MovieSchema = new Schema({
         type: Array, 
         "default": []
     },
-    img: {
+    v_img: {
+        type: String, 
+        required: true
+    }, 
+    h_img: {
         type: String, 
         required: true
     }, 
@@ -34,6 +38,18 @@ const MovieSchema = new Schema({
         required: true
     },
     duration: {
+        type: String,
+        required: true
+    },
+    director: {
+        type: String,
+        required: true
+    },
+    cast: {
+        type: String,
+        requried: true
+    },
+    release: {
         type: String,
         required: true
     }

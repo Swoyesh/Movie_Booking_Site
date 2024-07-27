@@ -12,6 +12,7 @@ import MovieID from './components/MovieID';
 // import MovieCollection from './components/MovieCollection';
 import Navbar from './components/Navbar';
 import './App.css';
+import Fbuy from './components/Fbuy';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/fbuy" element={<Fbuy />} />
           <Route path="/fpassword" element={<Forgo />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/career" element={<Career />} />

@@ -11,16 +11,22 @@ async(req, res)=>{
         if(movie){
             return res.status(400).json({error: "Sorry Movie already inputted!!"})
         }
+       
         movie = await Movie.create({
             name: req.body.name,
             time: req.body.time,
             rating: req.body.rating,
             synopsis: req.body.synopsis,
             day: req.body.day,
-            img: req.body.img,
+            v_img: req.body.v_img,
+            h_img: req.body.h_img,
             genre: req.body.genre,
-            duration: req.body.duration
+            duration: req.body.duration,
+            director: req.body.director,
+            cast: req.body.cast,
+            release: req.body.release
         })
+        console.log("hello")
         res.status(200).send({successful: "Good job"})
     }catch(error){
         res.status(500).send({error: "Internal server error"})
