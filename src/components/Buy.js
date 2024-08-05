@@ -40,7 +40,6 @@ const Buy = () => {
     synopsis,
     days,
   } = movieDetails;
-  // console.log(movieId)
   const hours = date.getHours();
   const min = date.getMinutes();
   const context = useContext(movieContext);

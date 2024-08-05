@@ -45,10 +45,6 @@ const Moviecollec = () => {
     }
   }, [getMovies]);
 
-  // console.log(decider)
-  // console.log(mov)
-  // console.log(nmov)
-
   useEffect(() => {
     if (day === "tomm") {
       setDecider(nmov);
@@ -138,15 +134,12 @@ const Moviecollec = () => {
     const mo3 = decider.slice(8, 9 + newL);
 
     if (i === 2) {
-      console.log("1");
       setMovies(mo2);
     } else if (i === 3) {
       if (movies[0] === mo2[0]) {
         setMovies(mo3);
-        console.log("2");
       } else if (movies[0] === mo1[0]) {
         setMovies(mo2);
-        console.log("3");
       }
     }
   };

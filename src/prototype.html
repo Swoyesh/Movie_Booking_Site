@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Receipt</title>
+    <style>
+        .body{
+            width: 100%;
+            line-height: 0px;
+        }
+        .first{
+            display: flex;
+        }
+        .none{
+            flex: 1;
+        }
+        .bolder{
+            font-weight: bold;
+        }
+        .inside{
+            flex: 1;
+            font-size: 12px;
+        }
+        .sub-main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            line-height: 0px;
+        }
+        .new{
+            display: inline;
+            justify-content: flex-end;
+            line-height: 10px;
+        }
+        .newer{
+            font-size: 10px;
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+        }
+        .gotit{
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main" style="width: 30%;">
+        <div class="sub-main">
+            <h2>Cinestar Pvt. Ltd.</h2>
+            <h2>Big Movies</h2>
+            <h3>City Center, Kamalpokhari, Kathmandu</h3>
+            <p>Tax Invoice</p>
+        </div>
+        <div class="body">
+            <div class="first">
+                <p>S.No: <span style="font-weight: bold;">ART </span> </p>
+                <divclass="none"></div>
+                <p>Vat: <span class="bolder"></span></p>
+            </div>
+            <div class="first">
+                <p>Movie: <span class="bolder"></span> </p>
+            </div>
+            <div class="first">
+                <p>Screen: <span class="bolder">Audi 1 </span> </p>
+                <div class="none"></div>
+                <p>Type: <span class="bolder">Platinum</span></p>
+            </div>
+            <div class="first">
+                <p class="inside">Date: <span class="bolder"> </span> </p>&nbsp;&nbsp;&nbsp;
+                <p class="inside">Time: </p>&nbsp;&nbsp;&nbsp;
+                <p class="inside">Seat No: <span class="bolder"></span></p>
+            </div>
+            <div class="new">
+                <p>Total Cost: </p>
+            </div>
+            <svg id="barcode"></svg>
+        </div>
+        <div class="newer">
+            <ol class="gotit">
+                <li>Tickets once sold cannot be refunded, transferred or exchanged.</li>
+                <li>Lost, stolen or damaged tickets will not be replaced.</li>
+                <li>Seat allocation cannot be altered after the purchase of the tickets.</li>
+            </ol>
+        </div>
+    </div>
+    <script src="assets/js/JsBarcode.all.min.js"></script>
+    <script>
+        JsBarcode("#barcode");
+    </script>
+</body>
+</html>

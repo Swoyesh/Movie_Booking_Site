@@ -12,7 +12,7 @@ import Layout from "./Layout"
 const Login = () => {
   let location = useLocation()
   let context = useContext(movieContext);
-  let { userFunc, user, activeTab, setActiveTab } = context;
+  let { userFunc, user, activeTab, setActiveTab, setEmail } = context;
 
   let inputRefs = useRef([]);
   useEffect(() => {
@@ -120,9 +120,7 @@ const Login = () => {
         cpassword: credentials.cpassword,
       }),
     });
-    console.log(credentials);
     const json = await response.json();
-    console.log(json);
     if (json.success) {
       localStorage.setItem("auth-token", json.authToken);
       navigate("/home");
@@ -149,7 +147,6 @@ const Login = () => {
       }),
     });
     const json = await response.json();
-    console.log(json.success);
     if (json.success) {
       navigate("/home");
       localStorage.setItem("auth-token", json.authToken);

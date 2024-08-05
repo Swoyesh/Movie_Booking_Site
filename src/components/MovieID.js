@@ -11,11 +11,9 @@ const MovieID = () => {
   const { title, days, time } = location.state;
   const len = days.length;
   const currentDate = new Date();
-
   // Get the day of the month (1-31)
   const dayss = currentDate.getDate();
   const din = currentDate.getDay();
-  console.log(din)
 
   // Get the month (0-11)
   const monthIndex = currentDate.getMonth();
@@ -60,15 +58,13 @@ const MovieID = () => {
       const index = selectedSeat.indexOf(seatId)
       selectedSeat.splice(index ,1)
       if(din == 3 || din == 4){
-        setNprice(nprice-1850)
+        setNprice(nprice-185)
       }else{
         setNprice(nprice-350)
       }
-      setNprice(nprice-350)
+      setNprice(nprice-185)
     }else{
       setSelectedSeat([...selectedSeat, seatId]);
-      console.log(seatId in selectedSeat)
-      console.log(selectedSeat)
       if(din == 3 || din == 4){
         setNprice(nprice+185)
       }else{
@@ -79,7 +75,7 @@ const MovieID = () => {
 
   const fbuyer = (selectedSeat, nprice)=>{
     navigate("/fbuy", {
-      state: {selectedSeat: selectedSeat, price: nprice, time: time, date: formattedDate},
+      state: {selectedSeat: selectedSeat, price: nprice, time: time, date: formattedDate, title: title},
     })
   }
 

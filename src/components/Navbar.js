@@ -40,10 +40,12 @@ const Navbar = () => {
     const [styler, setStyler] = useState(s1)
 
     const nneutral = () => {
+        
         setActiveTab(null);
     }
 
-    const neutral = () => {
+    const neutral = (e) => {
+        e.preventDefault()
         localStorage.removeItem("auth-token")
         localStorage.removeItem("name")
         navigate("/");
@@ -187,7 +189,7 @@ const Navbar = () => {
                         type="button"
                         className="btn"
                         style={styler}
-                        onClick={title === "Login" ? nneutral : neutral}
+                        onClick={title === "Login" ? (event)=>nneutral(event) : neutral}
                     >
                         <strong>{title}</strong>
                     </button>

@@ -31,7 +31,6 @@ const Moviesnav = () => {
     let final_date
     for(let i = 1; i<=8; i++){
     if(arr[index]<=ld.getDate() && arr[index-i]!=ld.getDate()){
-      console.log(arr[index-i])
       final_date = d.getMonth()
     }else{
       return d. getMonth()+1

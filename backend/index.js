@@ -1,28 +1,23 @@
-const express = require('express')
-const connectToMongo = require("./db")
-// const pdfRoute = requrie("./routes/pdf")
-const app = express()
-let cors = require('cors')
+const express = require('express');
+const connectToMongo = require('./db');
+const cors = require('cors');
 
-connectToMongo()
-const port = 5000
+const app = express();
+const port = 5000;
 
-app.use(cors())
+connectToMongo();
 
-//Route for authentication.
-app.use(express.json({extended: true}))
-app.use("/api/auth", require("./routes/auth"))
+// Middleware
+app.use(cors());
+app.use(express.json({ extended: true }));
 
-//Route for movies.
-app.use(express.json())
-app.use("/api/movies", require("./routes/movie"))
+// Routes
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/movies', require('./routes/movie'));
+app.use('/api/tickets', require('./routes/ticket'));
+app.use('/seats', require('./routes/pdf'));
 
-//Route for tickets.
-app.use(express.json())
-app.use("/api/tickets", require("./routes/ticket"))
-
-// app.use(pdfRoute)
-
+// Start server
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+    console.log(`Example app listening on port ${port}`);
+});
