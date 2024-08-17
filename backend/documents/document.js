@@ -7,7 +7,7 @@ module.exports = ({ selectedSeat, price, time, date, title, sno, vat, barcodeBas
             <title>Ticket Receipt</title>
         </head>
         <body>
-             <div class="main" style="width: 30%;">
+             <div class="main" style="width: 45%;">
                 <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; line-height: 0px;">
                     <h2>Cinestar Pvt. Ltd.</h2>
                     <h2>Big Movies</h2>

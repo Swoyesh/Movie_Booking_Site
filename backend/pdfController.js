@@ -1,9 +1,11 @@
-const pdf = require('html-pdf');
+const puppeteer = require('puppeteer');
 const path = require('path');
 const bwipjs = require('bwip-js');
 const pdfTemplate = require('./documents/document.js');
 const nodemailer = require('nodemailer')
 const fs = require('fs')
+require('dotenv').config()
+
 
 // Generate barcode as base64
 const generateBarcode = (text) => {
@@ -26,6 +28,7 @@ const generateBarcode = (text) => {
     });
 };
 
+
 exports.genPdf = async (req, res) => {
     try {
         const { selectedSeat, price, time, date, title } = req.body;
@@ -35,28 +38,83 @@ exports.genPdf = async (req, res) => {
 
         const htmlContent = pdfTemplate({ selectedSeat, price, time, date, title, sno, vat, barcodeBase64 });
 
-        // Log the generated HTML content to ensure it's correctly formed
         console.log("Generated HTML Content:", htmlContent);
 
-        pdf.create(htmlContent, {}).toFile(path.join(__dirname, 'receipt.pdf'), (err, result) => {
-            if (err) {
-                console.error("Error generating PDF:", err);
-                return res.status(500).send('An error occurred while generating the PDF');
-            }
-            res.json({ message: 'PDF generated', filename: result.filename });
-        });
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+        await page.setContent(htmlContent);
+        const pdfBuffer = await page.pdf({ format: 'A4' });
+        await browser.close();
+
+        fs.writeFileSync(path.join(__dirname, 'receipt.pdf'), pdfBuffer);
+
+        res.json({ message: 'PDF generated', filename: 'reciept.pdf' });
     } catch (err) {
         console.error("Error in genPdf:", err);
         res.status(500).send('An error occurred while generating the PDF');
     }
 };
-
 exports.fetchPdf = async (req, res) => {
-    res.sendFile(path.join(__dirname,'receipt.pdf'));
+    const filePath = path.join(__dirname, 'receipt.pdf');
+    console.log(filePath)
+
+    // Check if the file exists
+    fs.access(filePath, fs.constants.F_OK, (err) => {
+        if (err) {
+            console.error('File does not exist:', filePath);
+            return res.status(404).send('File not found');
+        }
+
+        // Send the file
+        res.sendFile(filePath, (err) => {
+            if (err) {
+                console.error('Error sending file:', err);
+                res.status(500).send('An error occurred while sending the file');
+            }
+        });
+    });
 };
 
-exports.deliverPdf = async(req,res) => {
-   
-        res.send("Mail has been sent to your email. Check your mail!")
-    
+exports.deliverPdf = async(req, res) => {
+    const pathToAttachment = path.join(__dirname, 'receipt.pdf');
+    const attachment = fs.readFileSync(pathToAttachment);
+
+    // Logging to ensure environment variables are accessible
+    // console.log('Email user:', process.env.EMAIL_USER);
+    // console.log('Email pass:', process.env.EMAIL_PASS ? '****' : 'Not set');
+
+    let smtpTransport = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        service: 'Gmail',
+        port: 465,
+        secure: true, 
+        auth: {
+            user: "swoyeshshrestha69@gmail.com",
+            pass: "jhvn hjpx xxlf zyql"
+            // user: process.env.EMAIL_USER,
+            // pass: process.env.EMAIL_PASS
+        },
+        tls: { rejectUnauthorized: false }
+    });
+
+    smtpTransport.sendMail({
+        from: "swoyeshshrestha69@gmail.com",
+        // from: process.env.EMAIL_USER,
+        to: req.body.email,
+        subject: 'Online Movie Tickets',
+        html: `Show the tickets given in the PDF.`,
+        attachments: [{
+            filename: 'receipt.pdf',
+            content: attachment,
+            contentType: 'application/pdf',
+            disposition: 'attachment'
+        }]
+    }, function(error, info) {
+        if (error) {
+            console.log("Error sending email:", error);
+        } else {
+            console.log("Email sent:", info.response);
+        }
+        res.send("Mail has been sent to your email. Check your mail!");
+    });
 }

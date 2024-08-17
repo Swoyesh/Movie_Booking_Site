@@ -9,6 +9,7 @@ import movieContext from "../Context/movieContext";
 const Fbuy = () => {
   const context = useContext(movieContext)
   const {user} = context
+  const email = user.email
     const location = useLocation()
     const value = location.state
     const {selectedSeat , price, time, date, title} = value
@@ -16,12 +17,12 @@ const Fbuy = () => {
     const generatePDF = async () => {
           await axios.post('http://localhost:5000/seats/generatePDF', data).then(()=>
             axios.get('http://localhost:5000/seats/fetchPDF', {responseType:'blob'})
-          .then((res)=>{
-            const pdfBlob = new Blob([res.data], {type:'application/pdf'})
-            saveAs(pdfBlob, "ReceiptDocument.pdf")
-          })
+          // .then((res)=>{
+          //   const pdfBlob = new Blob([res.data], {type:'application/pdf'})
+          //   saveAs(pdfBlob, "ReceiptDocument.pdf")
+          // })
           .then(()=>{
-            axios.post('http://localhost:5000/seats/deliverPDF', user.email).then(response=>{
+            axios.post('http://localhost:5000/seats/deliverPDF', {email: email}).then(response=>{
               console.log(response)
               alert(response.data)
             })
