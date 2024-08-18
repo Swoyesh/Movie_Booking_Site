@@ -89,17 +89,14 @@ exports.deliverPdf = async(req, res) => {
         port: 465,
         secure: true, 
         auth: {
-            user: "swoyeshshrestha69@gmail.com",
-            pass: "jhvn hjpx xxlf zyql"
-            // user: process.env.EMAIL_USER,
-            // pass: process.env.EMAIL_PASS
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
         },
         tls: { rejectUnauthorized: false }
     });
 
     smtpTransport.sendMail({
-        from: "swoyeshshrestha69@gmail.com",
-        // from: process.env.EMAIL_USER,
+        from: process.env.EMAIL_USER,
         to: req.body.email,
         subject: 'Online Movie Tickets',
         html: `Show the tickets given in the PDF.`,
