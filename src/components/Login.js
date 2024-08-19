@@ -12,7 +12,7 @@ import Layout from "./Layout"
 const Login = () => {
   let location = useLocation()
   let context = useContext(movieContext);
-  let { userFunc, user, activeTab, setActiveTab, setEmail } = context;
+  let { userFunc, user, activeTab, setActiveTab} = context;
 
   let inputRefs = useRef([]);
   useEffect(() => {

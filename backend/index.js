@@ -8,8 +8,6 @@ const port = 5000;
 
 connectToMongo();
 
-console.log(process.env.EMAIL_USER)
-
 // Middleware
 app.use(cors());
 app.use(express.json({ extended: true }));
@@ -17,7 +15,8 @@ app.use(express.json({ extended: true }));
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/movies', require('./routes/movie'));
-app.use('/seats', require('./pdf'));
+// app.use('/api/tickets', require('./routes/ticket'));
+app.use('/seats', require('./routes/pdf'));
 
 // Start server
 app.listen(port, () => {
