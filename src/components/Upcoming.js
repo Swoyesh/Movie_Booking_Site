@@ -2,30 +2,30 @@ import React, { useState } from 'react'
 import "../title.css"
 import { Link } from 'react-router-dom'
 import SCmovie from './SCmovie.js'
-import ala from '../ala.jpg'
-import mnik from '../mnik.jpg'
-import tf from '../12f.jpeg'
+import jk from '../jk.jpg'
+import goat from '../goat.jpeg'
+import srk from '../srk.jpg'
 
 const Upcoming = () => {
     const first = {
-        name: "Aladdin",
-        time: "2 Hours", 
-        release: "April 10",
-        photos: ala
+        name: "Joker: Folie à Deux",
+        time: "2 Hours 18 Mins", 
+        release: "October 4",
+        photos: jk
     }
     
     const second = {
-        name: "My name is Khan",
-        time: "2 Hours 26 Mins", 
-        release: "March 5", 
-        photos: mnik
+        name: "The Greatest Of Time",
+        time: "2 Hours 59 Mins", 
+        release: "September 5", 
+        photos: goat
     }
     
     const sfirst = {
-        name: "12th fail",
-        time: "2 Hours 26 Mins",
-        release: "October 27",
-        photos: tf
+        name: "King",
+        time: "3 Hours",
+        release: "November 1, 2025",
+        photos: srk
     }
 
 let NR = [first, second]

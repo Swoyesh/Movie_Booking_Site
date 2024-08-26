@@ -122,7 +122,6 @@ const Login = () => {
     });
     const json = await response.json();
     if (json.success) {
-      localStorage.setItem("auth-token", json.authToken);
       navigate("/home");
     } else {
       inputRefs.current.forEach((inputRef) => {
@@ -264,12 +263,12 @@ const Login = () => {
               >
                 OR Login With
               </span>
-              <input
+             <a style = {{width: "0px", height: "0px", padding: "0px", textDecoration: "none"}}href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?response_type=code&redirect_uri=https%3A%2F%2Fbigmovies.com.np%2FCineLogin.aspx&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&client_id=94112936957-s8ovajlpu1rb631u8tbg67b787t1f43c.apps.googleusercontent.com&service=lso&o2v=1&ddm=0&flowName=GeneralOAuthFlow"> <input
                 type="image"
                 src={gg}
                 className="g-inp"
                 alt="photo"
-              ></input>
+              ></input></a>
             </div>
           </div>
           <div className="first-hidden" style={{ display: dis2 }}>

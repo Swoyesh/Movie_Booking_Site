@@ -15,7 +15,7 @@ app.use(express.json({ extended: true }));
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/movies', require('./routes/movie'));
-// app.use('/api/tickets', require('./routes/ticket'));
+app.use('/api/tickets', require('./routes/ticket'));
 app.use('/seats', require('./routes/pdf'));
 
 // Start server

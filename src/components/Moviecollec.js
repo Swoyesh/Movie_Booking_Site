@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import Cmovie from './Cmovie';
 import "../MC.css";
 import movieContext from '../Context/movieContext';
-import { Link } from "react-router-dom";
 
 const Moviecollec = () => {
   let context = useContext(movieContext);
@@ -28,9 +27,9 @@ const Moviecollec = () => {
         if (movie.day.length === 2) {
           tempMov.push(movie);
           tempNmov.push(movie);
-        } else if (movie.day.length === 1 && movie.day[0] == 0) {
+        } else if (movie.day.length === 1 && movie.day[0] == "Today") {
           tempMov.push(movie);
-        } else if (movie.day.length === 1 && movie.day[0] == 1) {
+        } else if (movie.day.length === 1 && movie.day[0] == "Tomm") {
           tempNmov.push(movie);
         }
       }

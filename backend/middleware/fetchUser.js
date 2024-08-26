@@ -8,10 +8,16 @@ const fetchUser = (req, res, next)=>{
         return res.status(401).send({ error: "Please authenticate using a valid token." });
     }
     try {
-        const data = jwt.verify(token, JWT_secret)
+        const data = jwt.verify(token, JWT_secret, (err, res)=>{
+            if(err){
+                return "token expired"
+            }
+            return res
+        })
         req.user = data.user
         next()
     } catch (error) {
+        console.log("Please authenticate using a valid token.")
         res.status(401).send({ error: "Please authenticate using a valid token." });
     }
 }

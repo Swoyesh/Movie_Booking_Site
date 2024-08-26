@@ -1,33 +1,62 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../fbuy.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from '../logo.jpg'
 import axios from "axios";
-import { saveAs} from "file-saver";
 import movieContext from "../Context/movieContext";
 
 const Fbuy = () => {
+  const navigate = useNavigate()
   const context = useContext(movieContext)
   const {user} = context
+  const [paidSeat, setPaidSeat] = useState([])
   const email = user.email
     const location = useLocation()
     const value = location.state
-    const {selectedSeat , price, time, date, title} = value
+    const {selectedSeat , price, time, date, title, movieId, days} = value
     const data = { selectedSeat, price, time, date, title }
+    
+    useEffect(() => {
+      setPaidSeat([...paidSeat, selectedSeat])
+    }, [])
+    const new_data = {paidSeat, date, time, title}
     const generatePDF = async () => {
-          await axios.post('http://localhost:5000/seats/generatePDF', data).then(()=>
-            axios.get('http://localhost:5000/seats/fetchPDF', {responseType:'blob'})
+          await axios.post('http://localhost:5000/seats/generatePDF', data)
+          //donwload PDF
+          // .then(()=>
+          //   axios.get('http://localhost:5000/seats/fetchPDF', {responseType:'blob'})
           // .then((res)=>{
           //   const pdfBlob = new Blob([res.data], {type:'application/pdf'})
           //   saveAs(pdfBlob, "ReceiptDocument.pdf")
           // })
           .then(()=>{
             axios.post('http://localhost:5000/seats/deliverPDF', {email: email}).then(response=>{
-              console.log(response)
               alert(response.data)
             })
           })
-        )}
+          // await axios.put("http://localhost:5000/api/tickets/selectedseats", new_data).then(response=>{
+          //   console.log(response)
+          // })
+          axios.post('http://localhost:5000/api/tickets/selectedseats', new_data, {
+            headers: {
+             "auth-token": localStorage.getItem("auth-token")
+            }
+          })
+  .then(response => {
+    console.log(response)
+  })
+  .catch(error => {
+    if (error.response && error.response.status === 401) {
+      alert("Unauthorized! Please log in.");
+    } else {
+      console.error("An error occurred:", error);
+    }
+  });
+          navigate(`/movieid/${title}/${movieId}`,{
+            state: {paidSeat: paidSeat, time: time, movieId: movieId, days: days, title: title}
+          })
+        }
+        console.log(days)
   
   return (
     <>

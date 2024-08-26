@@ -11,16 +11,19 @@ const Cmovie = (props) => {
   const { type } = props;
   let hello = [];
   const navigate = useNavigate();
-
+  const paidSeat = [0]
   const nbuyer = (ele, stl) => {
     if ((localStorage.getItem("auth-token") === null) & (stl == st1)) {
       navigate("/login");
     } else if (stl == st1) {
-      navigate(`/movieid/${props.title}/${props.movieId}`, {
+      navigate(`/movieid/${props.title}/${props.id}`, {
         state: {
           title: props.title,
           days: props.days,
           time: ele,
+          movieId: props.id,
+          days: props.days,
+          paidSeat: paidSeat
         },
       });
     }

@@ -13,6 +13,7 @@ const Buy = () => {
   // Retrieve the state from location or localStorage
   const movieDetails =
     location.state || JSON.parse(localStorage.getItem("movieDetails"));
+    
 
   useEffect(() => {
     if (location.state) {
@@ -40,10 +41,14 @@ const Buy = () => {
     synopsis,
     days,
   } = movieDetails;
+  const paidSeat = [0]
   const hours = date.getHours();
   const min = date.getMinutes();
   const context = useContext(movieContext);
-  const { b_dis2, setB_dis2, setDay, b_dis1, setB_dis1, day } = context;
+  const { b_dis2, setB_dis2, setDay, b_dis1, setB_dis1, day, userFunc } = context;
+  useEffect(() => {
+    userFunc()
+}, [])
   const audis = ["Audi 1"];
   const d = new Date();
   const ld = new Date(d.getFullYear(), d.getMonth() + 1, 0);
@@ -115,7 +120,7 @@ const Buy = () => {
       navigate("/login");
     } else if (stl == st1) {
       navigate(`/movieid/${title}/${movieId}`, {
-        state: { title: title, days: days, time: ele },
+        state: { title: title, days: days, time: ele, movieId: movieId, paidSeat: paidSeat},
       });
     }
   };

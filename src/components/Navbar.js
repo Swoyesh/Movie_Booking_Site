@@ -16,7 +16,7 @@ const Navbar = () => {
     const handleMenuClick = (tab) => {
         setActiveTab(tab);
     };
-
+    
     const s1 = {
         borderRadius: "30px",
         borderColor: "red",

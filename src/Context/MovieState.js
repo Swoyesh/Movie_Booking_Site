@@ -24,6 +24,9 @@ const MovieState = (props) => {
     });
     const json = await response.json();
     setUser(json);
+    if(json.error == "Invalid user authentication"){
+      window.localStorage.clear()
+    }
   };
 
   const getMovies = async () => {

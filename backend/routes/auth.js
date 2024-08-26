@@ -8,6 +8,7 @@ const fetchUser = require('../middleware/fetchUser')
 
 const JWT_secret = "firsttry"
 
+
 //To create a user. No login required!!
 router.post("/signup", [
   body("f_name", "Enter a valid first name").isLength({ min: 3 }),
@@ -47,12 +48,8 @@ router.post("/signup", [
       password: secPass,
       cpassword: secPass
     });
-
-    // Generate JWT token
-    const data = { user: { id: user.id } };
     success = true
-    const authToken = jwt.sign(data, JWT_secret);
-    res.json({success, authToken });
+    res.json({success});
   } catch (error) {
     res.status(500).send({success, error: "Internal server error!!" });
   }
@@ -85,7 +82,7 @@ router.post(
           id: user.id
         }
       }
-      const authToken = jwt.sign(data, JWT_secret)
+      const authToken = jwt.sign(data, JWT_secret, { expiresIn: '24hr' })
       success = true
       return res.json({success, authToken })
     } catch (error) {
